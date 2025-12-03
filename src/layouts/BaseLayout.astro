@@ -3,6 +3,8 @@ import "../styles/global.css";
 import { languages } from "@/i18n/ui";
 import { getLangFromUrl } from "@/i18n/utils";
 
+import Header from "@/components/common/Header.astro";
+
 interface Props {
   title: string;
   description?: string;
@@ -36,5 +38,8 @@ const lang = getLangFromUrl(Astro.url);
 
     <title>{title}</title>
   </head>
-  <body><slot /> </body>
+  <body class="max-w-[2180px] w-full min-h-screen mx-auto">
+    <Header />
+    <slot />
+  </body>
 </html>

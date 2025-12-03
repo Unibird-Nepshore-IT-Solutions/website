@@ -2,6 +2,15 @@
   "title": "UnibirdNepshore I.T. Solutions Pvt. Ltd.",
   "need_help": "Need help to start your project?",
   "request_for_a_call": "Request for a call",
+  "nav": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About Us",
+    "testimonials": "Testimonials",
+    "service_area": "Service Area",
+    "why_us": "Why Us",
+    "contact": "Contact"
+  },
   "hero": {
     "title": "Simplifying IT for a Complex world"
   }

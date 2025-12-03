@@ -1,0 +1,81 @@
+---
+import { CircleXIcon } from "lucide-react";
+
+import {
+  getLangFromUrl,
+  getLocalizedPath,
+  getRouteFromUrl,
+  useTranslations,
+} from "@/i18n/utils";
+
+import { Button } from "@/components/ui/button";
+import Image from "astro/components/Image.astro";
+import LanguageSwitcher from "@components/common/LanguageSwitcher.tsx";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const navItems = [
+  { path: "", label: t("nav.home") },
+  { path: "services", label: t("nav.services") },
+  { path: "about", label: t("nav.about") },
+  { path: "testimonials", label: t("nav.testimonials") },
+  { path: "service-area", label: t("nav.service_area") },
+  { path: "why-us", label: t("nav.why_us") },
+  { path: "contact", label: t("nav.contact") },
+];
+---
+
+<header>
+  <div
+    class="bg-primary text-center pr-12 pl-24 py-3 text-sm flex items-center justify-between"
+  >
+    <div></div>
+    <p class="text-primary-foreground">
+      {t("need_help")}
+      <span class="underline font-bold">{t("request_for_a_call")} !</span>
+    </p>
+    <Button size="8">
+      <CircleXIcon fill="white" strokeWidth="1" stroke="#097ac6" />
+    </Button>
+  </div>
+
+  <nav
+    class="w-full pr-12 pl-24 border-b border-border flex gap-2 items-center justify-between"
+  >
+    <div class="w-20 h-16 overflow-hidden">
+      <Image
+        alt="Logo"
+        width={55}
+        height={48}
+        src="/assets/images/logo.png"
+        class="size-full block object-contain"
+      />
+    </div>
+
+    <div>
+      <ul class="container flex gap-6">
+        {
+          navItems.map((item) => (
+            <li>
+              <a
+                href={getLocalizedPath(item.path, lang)}
+                class={`text-foreground hover:text-primary-dark transition-colors no-underline ${lang !== "en" ? "break-keep" : "break-normal"}`}
+              >
+                {item.label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+
+    <div>
+      <LanguageSwitcher
+        client:only="react"
+        currentLang={lang}
+        route={getRouteFromUrl(Astro.url)}
+      />
+    </div>
+  </nav>
+</header>

@@ -1,5 +1,16 @@
 {
   "title": "UnibirdNepshore I.T. Solutions Pvt. Ltd.",
+  "need_help": "तपाईंको परियोजना सुरु गर्न मद्दत चाहिन्छ?",
+  "request_for_a_call": "कलको लागि अनुरोध गर्नुहोस्",
+  "nav": {
+    "home": "गृहपृष्ठ",
+    "services": "सेवाहरू",
+    "about": "हाम्रो बारेमा",
+    "testimonials": "प्रशंसापत्र",
+    "service_area": "सेवा क्षेत्र",
+    "why_us": "किन हामी",
+    "contact": "सम्पर्क"
+  },
   "hero": {
     "title": "जटिल विश्वको लागि आईटी सरलीकरण गर्दै"
   }
