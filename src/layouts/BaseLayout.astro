@@ -1,15 +1,40 @@
 ---
 import "../styles/global.css";
+import { languages } from "@/i18n/ui";
+import { getLangFromUrl } from "@/i18n/utils";
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "UnibirdNepshore I.T. Solutions Pvt. Ltd." } =
+  Astro.props;
+
+const lang = getLangFromUrl(Astro.url);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="UTF-8" />
+    <meta name="description" content={description} />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
-    <title>UnibirdNepshore I.T. Solutions Pvt. Ltd.</title>
+
+    <!-- Language alternates for SEO -->
+    {
+      Object.keys(languages).map((locale) => (
+        <link
+          rel="alternate"
+          hreflang={locale}
+          href={`${Astro.site}${locale}/`}
+        />
+      ))
+    }
+
+    <title>{title}</title>
   </head>
   <body><slot /> </body>
 </html>

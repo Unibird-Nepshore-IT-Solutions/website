@@ -1,7 +1,4 @@
 ---
-import BaseLayout from "@/layouts/BaseLayout.astro";
+// Redirect root to default locale
+return Astro.redirect(`/${defaultLang}/`);
 ---
-
-<BaseLayout>
-  <main>Astro</main>
-</BaseLayout>

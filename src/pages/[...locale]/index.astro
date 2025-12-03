@@ -1,0 +1,30 @@
+---
+import { CircleXIcon } from "lucide-react";
+
+import { languages } from "@/i18n/ui";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+import { Button } from "@/components/ui/button";
+import BaseLayout from "@/layouts/BaseLayout.astro";
+
+export const getStaticPaths = () =>
+  Object.keys(languages).map((locale) => ({ params: { locale } }));
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<BaseLayout title={t("title")}>
+  <div
+    class="bg-primary text-center pr-12 pl-24 py-3 text-sm flex items-center justify-between"
+  >
+    <div></div>
+    <p class="text-primary-foreground">
+      {t("need_help")}
+      <span class="underline font-bold">{t("request_for_a_call")} !</span>
+    </p>
+    <Button size="8">
+      <CircleXIcon fill="white" strokeWidth="1" stroke="#097ac6" />
+    </Button>
+  </div>
+</BaseLayout>
