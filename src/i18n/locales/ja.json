@@ -8,10 +8,13 @@
     "about": "私たちについて",
     "testimonials": "お客様の声",
     "service_area": "サービスエリア",
+    "our_products": "当社の製品",
     "why_us": "選ばれる理由",
     "contact": "お問い合わせ"
   },
   "hero": {
-    "title": "複雑な世界のために IT を簡素化します"
+    "title": "複雑な世界のために IT を簡素化します",
+    "title1": "ITを簡素化します",
+    "title2": "コンプレックスワールド"
   }
 }

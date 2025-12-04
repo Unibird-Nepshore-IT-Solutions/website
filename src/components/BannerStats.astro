@@ -1,0 +1,38 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const bannerStats = [
+  {
+    label: "projects_completed",
+    value: "10+",
+  },
+  {
+    label: "years_of_experience",
+    value: "7+",
+  },
+  {
+    label: "clients_involved",
+    value: "100",
+  },
+  {
+    label: "lets_get_started",
+    value: t("hero.got_any_project"),
+  },
+];
+---
+
+<div
+  class="border w-full h-full pl-24 pr-12 py-6 flex items-center justify-between gap-2 bg-background"
+>
+  {
+    bannerStats.map((stat) => (
+      <div>
+        <h4 class="font-bold">{stat.value}</h4>
+        <p class="text-sm text-secondary-text">{t(`hero.${stat.label}`)}</p>
+      </div>
+    ))
+  }
+</div>

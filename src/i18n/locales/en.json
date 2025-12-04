@@ -7,11 +7,21 @@
     "services": "Services",
     "about": "About Us",
     "testimonials": "Testimonials",
-    "service_area": "Service Area",
+    "our_products": "Our Products",
     "why_us": "Why Us",
     "contact": "Contact"
   },
   "hero": {
-    "title": "Simplifying IT for a Complex world"
+    "title": "Simplifying IT for a Complex World",
+    "title1": "Simplifying IT for a",
+    "title2": "Complex World",
+    "subtitle": "We provide the best services to support your growth. Join us and rise beyond your expectations.",
+    "enter_your_email_address": "Enter your email address",
+    "email_us": "Email Us",
+    "projects_completed": "Projects completed",
+    "years_of_experience": "Years of Experience",
+    "clients_involved": "Clients involved",
+    "got_any_project": "Got any project?",
+    "lets_get_started": "Let's get started!"
   }
 }

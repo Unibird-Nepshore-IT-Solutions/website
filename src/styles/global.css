@@ -312,8 +312,8 @@
   input,
   textarea,
   select {
-    @apply rounded-md;
-    background-color: var(--input);
+    @apply rounded-none;
+    background-color: var(--background);
     color: var(--foreground);
     border-color: var(--border);
   }
