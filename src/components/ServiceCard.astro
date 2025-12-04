@@ -1,0 +1,19 @@
+---
+import Image from "astro/components/Image.astro";
+
+interface Props {
+  icon: string;
+  title: string;
+  description: string;
+}
+
+const { icon, title, description } = Astro.props;
+---
+
+<div
+  class="border p-4 flex flex-col justify-center gap-4 flex-1 hover:shadow-md transition-shadow"
+>
+  <Image src={icon} alt={"Icon"} width={20} height={20} class="text-sm" />
+  <h4 class="font-bold">{title}</h4>
+  <p class="text-secondary-text">{description}</p>
+</div>

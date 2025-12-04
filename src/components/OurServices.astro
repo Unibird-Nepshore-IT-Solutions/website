@@ -1,0 +1,54 @@
+---
+import ServiceCard from "./ServiceCard.astro";
+import Image from "astro/components/Image.astro";
+
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="our-services" class="py-24 pl-24 pr-12">
+  <h2 class="text-base text-secondary text-center">
+    {t("services.our_services")}
+  </h2>
+  <h3 class="text-[40px] font-bold text-center">
+    {t("services.tailored_professional_assistance")}
+  </h3>
+
+  <div class="flex justify-between gap-6 mt-10">
+    <div class="flex flex-col gap-6">
+      <ServiceCard
+        icon="/assets/svgs/web_dev.svg"
+        title={t("services.web_development")}
+        description={t("services.web_development_desc")}
+      />
+      <ServiceCard
+        icon="/assets/svgs/it_support.svg"
+        title={t("services.it_support_and_maintenance")}
+        description={t("services.it_support_and_maintenance_desc")}
+      />
+    </div>
+    <div class="w-[352px] h-full overflow-hidden">
+      <Image
+        width={352}
+        height={500}
+        alt="Our Services"
+        src="/assets/images/services.webp"
+        class="max-w-full h-full object-cover block"
+      />
+    </div>
+    <div class="flex flex-col gap-6">
+      <ServiceCard
+        icon="/assets/svgs/web_dev.svg"
+        title={t("services.web_development")}
+        description={t("services.web_development_desc")}
+      />
+      <ServiceCard
+        icon="/assets/svgs/it_support.svg"
+        title={t("services.it_support_and_maintenance")}
+        description={t("services.it_support_and_maintenance_desc")}
+      />
+    </div>
+  </div>
+</section>

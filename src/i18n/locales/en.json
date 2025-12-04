@@ -23,5 +23,17 @@
     "clients_involved": "Clients involved",
     "got_any_project": "Got any project?",
     "lets_get_started": "Let's get started!"
+  },
+  "services": {
+    "our_services": "Our Services",
+    "tailored_professional_assistance": "Tailored Professional Assistance",
+    "web_development": "Web Development",
+    "web_development_desc": "We have been providing you the top services and also been convenient supplier.",
+    "it_support_and_maintenance": "IT Support & Maintenance",
+    "it_support_and_maintenance_desc": "We have been providing you the top services and also been convenient supplier.",
+    "e_commerce_solution": "E-Commerce Solution",
+    "e_commerce_solution_desc": "We have been providing you the top services and also been convenient supplier.",
+    "cloud_and_hosting": "Cloud & Hosting",
+    "cloud_and_hosting_desc": "We have been providing you the top services and also been convenient supplier."
   }
 }
