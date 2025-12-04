@@ -1,0 +1,68 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import Image from "astro/components/Image.astro";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="about-us" class="py-24 pl-28 pr-12 bg-accent flex gap-10">
+  <!-- Left Section -->
+  <div class="w-1/2">
+    <div class="flex gap-2 mb-4">
+      <div
+        class="w-[304px] 2xl:w-[450px] h-[420px] 2xl:h-[550px] overflow-hidden"
+      >
+        <Image
+          width={304}
+          height={800}
+          alt="About Us"
+          src="/assets/images/about_us_1.webp"
+          class="w-full h-full object-cover block"
+        />
+      </div>
+      <div
+        class="w-[264px] 2xl:w-[350px] h-[420px] 2xl:h-[550px] overflow-hidden py-4"
+      >
+        <Image
+          width={264}
+          height={500}
+          alt="About Us"
+          src="/assets/images/about_us_2.webp"
+          class="max-w-full h-full object-cover block"
+        />
+      </div>
+    </div>
+
+    <h5 class="text-base font-bold">
+      {t("about.get_close_to_more_professionals")}
+    </h5>
+    <p class="text-sm text-secondary-text">
+      {t("about.receive_the_greatest_results")}
+    </p>
+  </div>
+
+  <!-- Right Section -->
+  <div class="w-1/2 flex flex-col gap-4">
+    <h2 class="text-base text-secondary">
+      {t("about.about_us")}
+    </h2>
+    <h3 class="text-[40px] font-bold">
+      {t("about.empowering_business")}
+    </h3>
+    <p class="text-secondary-text">{t("about.empowering_business_desc")}</p>
+
+    <div class="border border-border my-4"></div>
+
+    <div class="flex gap-8">
+      <div>
+        <h4 class="font-bold mb-2">{t("about.best_in_business")}</h4>
+        <p class="text-secondary-text">{t("about.best_in_business_desc")}</p>
+      </div>
+      <div>
+        <h4 class="font-bold mb-2">{t("about.247_support")}</h4>
+        <p class="text-secondary-text">{t("about.247_support_desc")}</p>
+      </div>
+    </div>
+  </div>
+</section>

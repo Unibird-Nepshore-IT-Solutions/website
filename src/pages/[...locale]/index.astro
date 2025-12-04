@@ -5,6 +5,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import Banner from "@/components/Banner.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import OurServices from "@/components/OurServices.astro";
+import AboutUs from "@/components/AboutUs.astro";
 
 export const getStaticPaths = () =>
   Object.keys(languages).map((locale) => ({ params: { locale } }));
@@ -16,4 +17,5 @@ const t = useTranslations(lang);
 <BaseLayout title={t("title")}>
   <Banner />
   <OurServices />
+  <AboutUs />
 </BaseLayout>
