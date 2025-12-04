@@ -1,0 +1,111 @@
+---
+import Image from "astro/components/Image.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const products = [
+  {
+    id: "mbn",
+    title: t("products.mbn"),
+    description: t("products.mbn_desc"),
+    features: [
+      t("products.mbn_feature_1"),
+      t("products.mbn_feature_2"),
+      t("products.mbn_feature_3"),
+    ],
+    image: "/assets/images/mbn-1.webp",
+  },
+  {
+    id: "skysales",
+    title: t("products.skysales"),
+    description: t("products.skysales_desc"),
+    features: [
+      t("products.skysales_feature_1"),
+      t("products.skysales_feature_2"),
+      t("products.skysales_feature_3"),
+    ],
+    image: "/assets/images/skysales-1.webp",
+  },
+];
+---
+
+<section id="our-products" class="py-24 pl-28 pr-12">
+  <h2 class="text-base text-secondary text-center">
+    {t("products.our_products")}
+  </h2>
+  <h3 class="text-[40px] font-bold text-center">
+    {t("products.empowering_your_digital_future")}
+  </h3>
+
+  <div class="relative min-h-[500px] mt-10">
+    {
+      products.map((product, index) => (
+        <div class={`fade-slide slide-${index + 1}`}>
+          <div class="flex gap-10">
+            {/* Left Section */}
+            <div class="w-1/2 flex flex-col gap-4">
+              <h4 class="font-bold text-[32px]">{product.title}</h4>
+              <p>{product.description}</p>
+              <h5 class="font-bold text-xl">{t("products.key_features")}</h5>
+              <ul class="list-disc flex flex-col gap-2">
+                {product.features.map((feature) => (
+                  <li>{feature}</li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Right Section */}
+            <div class="w-1/2 flex items-center justify-center">
+              <div class="relative w-full max-w-[400px] aspect-square">
+                {/* Circle background */}
+                <div class="absolute inset-0 rounded-full bg-accent" />
+                <Image
+                  width={300}
+                  height={300}
+                  alt="Our Product"
+                  src={product.image}
+                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[130%] h-auto max-w-none object-contain"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+
+<style>
+  .fade-slide {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    animation: fadeSlide 8s infinite;
+  }
+
+  .slide-1 {
+    animation-delay: 0s;
+  }
+
+  .slide-2 {
+    animation-delay: 4s;
+  }
+
+  @keyframes fadeSlide {
+    0%,
+    40% {
+      opacity: 0;
+    }
+    50%,
+    90% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+</style>

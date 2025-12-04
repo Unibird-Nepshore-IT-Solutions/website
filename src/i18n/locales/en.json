@@ -46,5 +46,20 @@
     "best_in_business_desc": "We have been providing you the top services and also been convenient supplier.",
     "247_support": "24/7 Support",
     "247_support_desc": "We have been providing you the top services and also been convenient supplier."
+  },
+  "products": {
+    "our_products": "Our Products",
+    "empowering_your_digital_future": "Empowering Your Digital Future",
+    "mbn": "MBN 電子取引",
+    "mbn_desc": "The website for MBN 電子取引 presents a cloud-based platform designed to streamline business-to‐business transaction workflows: from invoice creation and delivery, through receipt, to electronic bookkeeping and archival.",
+    "key_features": "Key Features",
+    "mbn_feature_1": "Supports sending, receiving and storing invoices, estimates, purchase orders, delivery notes and receipts in one unified platform.",
+    "mbn_feature_2": "Enables upload and transmission of existing invoice PDFs",
+    "mbn_feature_3": "Email notifications to confirm when the recipient has received the invoice — visibility across send/receive.",
+    "skysales": "SKYSALES",
+    "skysales_desc": "SKYSALES is a flexible, cloud-based business platform that empowers organisations - from solo entrepreneurs to large enterprises - to build and run their own branded digital ecosystem. You can launch your own \"My Platform\" space, host live-commerce, webinars, events, e-commerce.",
+    "skysales_feature_1": "Support for live video selling (LIVE commerce) plus standard e-commerce store front functionalities.",
+    "skysales_feature_2": "Engage users/customers through posts, timeline updates.",
+    "skysales_feature_3": "Schedule, invite and join online meetings seamlessly via built-in calendar and meeting tools."
   }
 }
