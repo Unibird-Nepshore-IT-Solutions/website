@@ -28,6 +28,7 @@ const navItems = [
 
 <header>
   <div
+    id="banner"
     class="bg-primary text-center pr-12 pl-24 py-3 text-sm flex items-center justify-between"
   >
     <div></div>
@@ -41,7 +42,8 @@ const navItems = [
   </div>
 
   <nav
-    class="w-full pr-12 pl-24 border-b border-border flex gap-2 items-center justify-between"
+    id="navbar"
+    class="w-full pr-12 pl-24 border-b border-border flex gap-2 items-center justify-between bg-background relative"
   >
     <div class="w-20 h-16 overflow-hidden">
       <Image
@@ -79,3 +81,70 @@ const navItems = [
     </div>
   </nav>
 </header>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const navbar = document.getElementById("navbar");
+    const banner = document.getElementById("banner");
+
+    if (!navbar || !banner) return;
+
+    const bannerHeight = banner.offsetHeight;
+
+    function updateNavbar() {
+      if (!navbar || !banner) return;
+      const scrollTop =
+        window.pageYOffset || document.documentElement.scrollTop;
+
+      if (scrollTop > bannerHeight) {
+        navbar.classList.add("fixed-nav");
+        navbar.style.top = "0";
+        navbar.style.left = "0";
+        navbar.style.right = "0";
+        navbar.style.zIndex = "50";
+        navbar.style.backdropFilter = "blur(4px)";
+        navbar.style.backgroundColor = "rgba(255, 255, 255, 0.85)";
+      } else {
+        navbar.classList.remove("fixed-nav");
+        navbar.style.cssText = "";
+      }
+    }
+
+    updateNavbar();
+
+    let ticking = false;
+    window.addEventListener("scroll", () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          updateNavbar();
+          ticking = false;
+        });
+        ticking = true;
+      }
+    });
+
+    window.addEventListener("resize", () => {
+      updateNavbar();
+    });
+  });
+</script>
+
+<style>
+  .fixed-nav {
+    position: fixed !important;
+    animation: slideDown 0.3s ease-out;
+  }
+
+  @keyframes slideDown {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(0);
+    }
+  }
+
+  body.has-fixed-nav {
+    padding-top: var(--nav-height, 80px);
+  }
+</style>
