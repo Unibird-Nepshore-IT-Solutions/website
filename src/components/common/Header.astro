@@ -36,7 +36,7 @@ const navItems = [
       {t("need_help")}
       <span class="underline font-bold">{t("request_for_a_call")} !</span>
     </p>
-    <Button className="size-6">
+    <Button className="size-6" id="close_btn" title={t("close")}>
       <CircleXIcon fill="white" strokeWidth="1" stroke="#097ac6" />
     </Button>
   </div>
@@ -86,6 +86,7 @@ const navItems = [
   document.addEventListener("DOMContentLoaded", () => {
     const navbar = document.getElementById("navbar");
     const banner = document.getElementById("banner");
+    const closeBtn = document.getElementById("close_btn");
 
     if (!navbar || !banner) return;
 
@@ -123,9 +124,14 @@ const navItems = [
       }
     });
 
-    window.addEventListener("resize", () => {
-      updateNavbar();
-    });
+    window.addEventListener("resize", () => updateNavbar());
+
+    function closeBanner() {
+      if (!closeBtn) return;
+      banner?.classList.add("hidden");
+    }
+
+    window.addEventListener("click", () => closeBanner());
   });
 </script>
 
