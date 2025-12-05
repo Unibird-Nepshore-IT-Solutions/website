@@ -74,5 +74,19 @@
     "call_us_now": "Call us now",
     "mail_us": "Mail us",
     "branch_office_nepal": "BRANCH OFFICE (NEPAL)"
+  },
+  "faq": {
+    "faqs": "FAQs",
+    "provide_solution_to_every_queries": "We provide solution to every queries!",
+    "what_services": "What services does UnibirdNepshore I.T. Solutions Pvt.Ltd. offer?",
+    "what_services_desc": "We provide tailored IT solutions that help your business grow and operate efficiently. From custom software and web development to mobile apps and IT consultancy, we create technology solutions that match your unique needs.",
+    "how_can_unibird": "How can UnibirdNepshore I.T. Solutions Pvt. Ltd. help my business?",
+    "how_can_unibird_desc": "We provide tailored IT solutions that help your business grow and operate efficiently. From custom software and web development to mobile apps and IT consultancy, we create technology solutions that match your unique needs.",
+    "can_i_get_support": "Can I get support after my project is completed?",
+    "can_i_get_support_desc": "We provide tailored IT solutions that help your business grow and operate efficiently. From custom software and web development to mobile apps and IT consultancy, we create technology solutions that match your unique needs.",
+    "what_technologies_does_unibird": "What technologies does UnibirdNepshore I.T. Solutions Pvt. Ltd. specialize in?",
+    "what_technologies_does_unibird_desc": "We provide tailored IT solutions that help your business grow and operate efficiently. From custom software and web development to mobile apps and IT consultancy, we create technology solutions that match your unique needs.",
+    "how_do_i_get_started": "How do I get started with UnibirdNepshore I.T. Solutions Pvt. Ltd.?",
+    "how_do_i_get_started_desc": "We provide tailored IT solutions that help your business grow and operate efficiently. From custom software and web development to mobile apps and IT consultancy, we create technology solutions that match your unique needs."
   }
 }

@@ -1,0 +1,48 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { AccordionComp } from "@components/common/AccordionComp.tsx";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const faqs = [
+  {
+    id: 1,
+    label: t("faq.what_services"),
+    value: t("faq.what_services_desc"),
+  },
+  {
+    id: 2,
+    label: t("faq.how_can_unibird"),
+    value: t("faq.how_can_unibird_desc"),
+  },
+  {
+    id: 3,
+    label: t("faq.can_i_get_support"),
+    value: t("faq.can_i_get_support_desc"),
+  },
+  {
+    id: 4,
+    label: t("faq.what_technologies_does_unibird"),
+    value: t("faq.what_technologies_does_unibird_desc"),
+  },
+  {
+    id: 5,
+    label: t("faq.how_do_i_get_started"),
+    value: t("faq.how_do_i_get_started_desc"),
+  },
+];
+---
+
+<section id="why-us" class="py-24 pl-24 pr-12 bg-accent">
+  <h2 class="text-base text-secondary text-center">
+    {t("faq.faqs")}
+  </h2>
+  <h3 class="text-[40px] font-bold text-center">
+    {t("faq.provide_solution_to_every_queries")}
+  </h3>
+
+  <div class="mt-10 max-w-3xl mx-auto">
+    <AccordionComp faqs={faqs} client:only="react" />
+  </div>
+</section>
