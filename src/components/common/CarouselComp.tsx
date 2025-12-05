@@ -100,6 +100,7 @@ export const CarouselComp = ({ slides }: { slides: CarouselCompProps[] }) => {
           const isActive = index === current;
           return (
             <div
+              key={index}
               className={`h-0.5 w-8 bg-muted ${
                 isActive && "bg-secondary w-14"
               } transition-all duration-500`}
