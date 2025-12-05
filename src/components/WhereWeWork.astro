@@ -1,0 +1,93 @@
+---
+import Image from "astro/components/Image.astro";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const whereWeWork = {
+  jpn: {
+    address:
+      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+    phone: "+81-6824-5043",
+    mail: "ub.office@uni-bird.com",
+  },
+  nep: {
+    address:
+      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+    phone: "+81-6824-5043",
+    mail: "ub.office@uni-bird.com",
+  },
+};
+---
+
+<section id="where-we-work" class="py-24 pl-24 pr-12">
+  <h2 class="text-base text-secondary text-center">
+    {t("work.where_we_work")}
+  </h2>
+  <h3 class="text-[40px] font-bold text-center">
+    {t("work.global_presence_at_footsteps")}
+  </h3>
+
+  <div class="m-10 flex justify-between gap-6">
+    <div class="w-1/2 overflow-hidden group relative">
+      <Image
+        width={550}
+        height={260}
+        alt="Work place japan"
+        src="/assets/images/work-1.webp"
+        class="w-full h-65 object-cover"
+      />
+      <div
+        class="p-6 text-center flex flex-col items-center justify-center gap-2 bg-secondary/60 opacity-0 group-hover:opacity-100 absolute inset-0 transition-all duration-500"
+      >
+        <h4 class="font-bold text-secondary-foreground">
+          {t("work.head_office_japan")}
+        </h4>
+        <h5 class="font-bold text-xl text-secondary-foreground">
+          {whereWeWork.jpn.address}
+        </h5>
+        <p class="font-bold text-secondary-foreground">
+          {`${t("work.call_us_now")}: `}<span class="font-normal"
+            >{whereWeWork.jpn.phone}</span
+          >
+        </p>
+        <p class="font-bold text-secondary-foreground">
+          {`${t("work.mail_us")}: `}<span class="font-normal"
+            >{whereWeWork.jpn.mail}</span
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="w-1/2 overflow-hidden group relative">
+      <Image
+        width={550}
+        height={260}
+        alt="Work place nepal"
+        src="/assets/images/work-2.webp"
+        class="w-full h-65 object-cover"
+      />
+      <div
+        class="p-6 text-center flex flex-col items-center justify-center gap-2 bg-secondary/60 opacity-0 group-hover:opacity-100 absolute inset-0 transition-all duration-500"
+      >
+        <h4 class="font-bold text-secondary-foreground">
+          {t("work.branch_office_nepal")}
+        </h4>
+        <h5 class="font-bold text-xl text-secondary-foreground">
+          {whereWeWork.nep.address}
+        </h5>
+        <p class="font-bold text-secondary-foreground">
+          {`${t("work.call_us_now")}: `}<span class="font-normal"
+            >{whereWeWork.nep.phone}</span
+          >
+        </p>
+        <p class="font-bold text-secondary-foreground">
+          {`${t("work.mail_us")}: `}<span class="font-normal"
+            >{whereWeWork.nep.mail}</span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

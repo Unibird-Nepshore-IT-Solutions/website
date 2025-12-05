@@ -7,6 +7,7 @@ import AboutUs from "@/components/AboutUs.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import OurServices from "@/components/OurServices.astro";
 import OurProducts from "@/components/OurProducts.astro";
+import WhereWeWork from "@/components/WhereWeWork.astro";
 import Testimonials from "@/components/Testimonials.astro";
 
 export const getStaticPaths = () =>
@@ -22,4 +23,5 @@ const t = useTranslations(lang);
   <AboutUs />
   <OurProducts />
   <Testimonials />
+  <WhereWeWork />
 </BaseLayout>

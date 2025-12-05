@@ -66,5 +66,13 @@
   "testimonials": {
     "testimonials": "Testimonials",
     "what_clients_say_about_us": "What Clients Say About Us"
+  },
+  "work": {
+    "where_we_work": "Where We Work",
+    "global_presence_at_footsteps": "Our Global Presence At Your Footsteps",
+    "head_office_japan": "HEAD OFFICE (JAPAN)",
+    "call_us_now": "Call us now",
+    "mail_us": "Mail us",
+    "branch_office_nepal": "BRANCH OFFICE (NEPAL)"
   }
 }
