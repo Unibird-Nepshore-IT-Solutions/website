@@ -62,5 +62,9 @@
     "skysales_feature_1": "Support for live video selling (LIVE commerce) plus standard e-commerce store front functionalities.",
     "skysales_feature_2": "Engage users/customers through posts, timeline updates.",
     "skysales_feature_3": "Schedule, invite and join online meetings seamlessly via built-in calendar and meeting tools."
+  },
+  "testimonials": {
+    "testimonials": "Testimonials",
+    "what_clients_say_about_us": "What Clients Say About Us"
   }
 }
