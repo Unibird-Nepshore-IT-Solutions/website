@@ -33,19 +33,21 @@ export default function LanguageSwitcher({
             className="size-full block object-contain rounded-md"
           />
         </div>
-        {languages[currentLang]
-          .split(" ")
-          .map((item, index) => (
-            <span className={index === 0 ? "text-secondary-text" : ""}>
-              {item}
-            </span>
-          )) || "Language"}
+        {languages[currentLang].split(" ").map((item, index) => (
+          <span
+            key={index}
+            className={index === 0 ? "text-secondary-text" : ""}
+          >
+            {item}
+          </span>
+        )) || "Language"}
         <ChevronDown size={16} />
       </PopoverTrigger>
       <PopoverContent className="w-40 p-0 bg-background">
         <div className="flex flex-col">
           {Object.entries(languages).map(([langCode, label]) => (
             <div
+              key={langCode}
               className={`flex items-center gap-2 px-3 py-2 text-sm text-inherit no-underline ${
                 currentLang === langCode
                   ? "font-medium bg-primary-light text-primary-foreground"
