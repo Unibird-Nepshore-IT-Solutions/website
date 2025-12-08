@@ -1,0 +1,136 @@
+---
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+import { Button } from "@components/ui/button";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+
+const whereWeWork = {
+  jpn: {
+    address:
+      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+    phone: "+81-6824-5043",
+    mail: "ub.office@uni-bird.com",
+  },
+  nep: {
+    address:
+      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+    phone: "+81-6824-5043",
+    mail: "ub.office@uni-bird.com",
+  },
+};
+---
+
+<footer id="footer" class="pt-24 pl-28 pr-12 bg-primary">
+  <div
+    class="flex items-center justify-between border-b border-background pb-12"
+  >
+    <h1 class="text-primary-foreground">
+      {t("footer.subscribe_to_our_newsletter")}
+    </h1>
+    <form
+      action=""
+      class="w-full max-w-[472px] flex items-center gap-1 h-12 border border-background"
+    >
+      <div class="h-full min-w-4 w-full">
+        <input
+          type="text"
+          class="p-2 px-3 w-full h-full placeholder:text-base"
+          placeholder={t("hero.enter_your_email_address")}
+        />
+      </div>
+      <Button className="rounded-none px-4 py-4 h-full w-36 text-base"
+        >{t("footer.subscribe_us")}</Button
+      >
+    </form>
+  </div>
+
+  <div
+    class="pt-12 flex justify-between gap-12 border-b border-background pb-12"
+  >
+    <div class="flex flex-col gap-3 max-w-[40%] w-full">
+      <h2 class="text-base font-bold text-primary-foreground opacity-70">
+        {t("about.about_us")}
+      </h2>
+      <p class="text-primary-foreground">{t("footer.footer_desc")}</p>
+      <p class="text-primary-foreground">
+        <span class="font-bold">{`${t("work.call_us_now")}: `}</span>
+        <span>{whereWeWork.jpn.phone}</span>
+      </p>
+      <p class="text-primary-foreground">
+        <span class="font-bold">{`${t("work.mail_us")}: `}</span>
+        <span>{whereWeWork.jpn.mail}</span>
+      </p>
+      <p class="text-primary-foreground">
+        <span class="font-bold">{`${t("footer.location")}: `}</span>
+        <span>{whereWeWork.jpn.address}</span>
+      </p>
+    </div>
+    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+      <h2 class="text-base font-bold text-primary-foreground opacity-70">
+        {t("footer.quick_links")}
+      </h2>
+      <ul class="flex flex-col gap-3">
+        <li>
+          <a href="#about-us" class="text-primary-foreground no-underline"
+            >{t("nav.about")}</a
+          >
+        </li>
+        <li>
+          <a href="#testimonials" class="text-primary-foreground no-underline"
+            >{t("nav.testimonials")}</a
+          >
+        </li>
+        <li>
+          <a href="#our-products" class="text-primary-foreground no-underline"
+            >{t("nav.our_products")}</a
+          >
+        </li>
+        <li>
+          <a href="#why-us" class="text-primary-foreground no-underline"
+            >{t("nav.why_us")}</a
+          >
+        </li>
+        <li>
+          <a href="#contact" class="text-primary-foreground no-underline"
+            >{t("nav.contact")}</a
+          >
+        </li>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+      <h2 class="text-base font-bold text-primary-foreground opacity-70">
+        {t("footer.services")}
+      </h2>
+      <ul class="flex flex-col gap-3">
+        <li class="text-primary-foreground">{t("services.web_development")}</li>
+        <li class="text-primary-foreground">
+          {t("services.it_support_and_maintenance")}
+        </li>
+        <li class="text-primary-foreground">
+          {t("services.e_commerce_solution")}
+        </li>
+        <li class="text-primary-foreground">
+          {t("services.cloud_and_hosting")}
+        </li>
+      </ul>
+    </div>
+    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+      <h2 class="text-base font-bold text-primary-foreground opacity-70">
+        {t("footer.technology_used")}
+      </h2>
+      <ul class="flex flex-col gap-3">
+        <li class="text-primary-foreground">Node JS</li>
+        <li class="text-primary-foreground">Next JS</li>
+        <li class="text-primary-foreground">Figma</li>
+        <li class="text-primary-foreground">Laravel</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="w-full flex justify-center py-4 text-primary-foreground">
+    &copy; {t("footer.copyright")} Unibird Inc. - 2020-{
+      new Date().getFullYear()
+    }
+  </p>
+</footer>

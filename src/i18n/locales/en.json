@@ -94,5 +94,15 @@
     "thinking_about_a_project": "Thinking about a project?",
     "contact_us_desc": "Don’t stop now! We’re here to help turn your ideas into reality or give you more insight into our work. Let’s connect.",
     "enter_your_number": "Enter your number"
+  },
+  "footer": {
+    "subscribe_to_our_newsletter": "Subscribe To Our Newsletter",
+    "footer_desc": "We deliver end-to-end IT services — from web and mobile app development to software solutions and consultancy.",
+    "subscribe_us": "Subscribe Us",
+    "location": "Location",
+    "quick_links": "Quick Links",
+    "services": "Services",
+    "technology_used": "Technology Used",
+    "copyright": "Copyright"
   }
 }
