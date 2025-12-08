@@ -9,7 +9,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<main class="flex gap-8 h-full w-full relative">
+<main id="home" class="flex gap-8 h-full w-full relative">
   <!-- Left Section -->
   <div class="flex flex-col gap-6 justify-center w-[55%] pl-28">
     <h1 class="text-6xl">{t("hero.title1")}</h1>

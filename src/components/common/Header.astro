@@ -1,13 +1,10 @@
 ---
 import { CircleXIcon } from "lucide-react";
 
-import {
-  getLangFromUrl,
-  getLocalizedPath,
-  getRouteFromUrl,
-  useTranslations,
-} from "@/i18n/utils";
+import { getLangFromUrl, getRouteFromUrl, useTranslations } from "@/i18n/utils";
 
+import "@styles/Header.css";
+import { MobileNav } from "./MobileNav.tsx";
 import { Button } from "@/components/ui/button";
 import Image from "astro/components/Image.astro";
 import LanguageSwitcher from "@components/common/LanguageSwitcher.tsx";
@@ -16,7 +13,7 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
 const navItems = [
-  { path: "", label: t("nav.home") },
+  { path: "home", label: t("nav.home") },
   { path: "our-services", label: t("nav.services") },
   { path: "about-us", label: t("nav.about") },
   { path: "testimonials", label: t("nav.testimonials") },
@@ -26,7 +23,7 @@ const navItems = [
 ];
 ---
 
-<header>
+<header class="@container">
   <div
     id="banner"
     class="bg-primary text-center pr-12 pl-24 py-3 text-sm flex items-center justify-between"
@@ -43,6 +40,8 @@ const navItems = [
 
   <nav
     id="navbar"
+    role="navigation"
+    aria-label="Main navigation"
     class="w-full pr-12 pl-24 border-b border-border flex gap-2 items-center justify-between bg-background relative"
   >
     <a href="/" class="w-20 h-16 overflow-hidden">
@@ -55,15 +54,16 @@ const navItems = [
       />
     </a>
 
-    <div>
-      <ul class="container flex gap-6">
+    <!-- Horizontal Navigation for Laptop+ screens -->
+    <div class="hidden @4xl:block">
+      <ul class="container hidden @4xl:flex gap-3 @5xl:gap-6">
         {
           navItems.map((item) => (
             <li>
               <a
                 href={"#" + item.path}
                 data-section={item.path}
-                class={`nav-item text-foreground hover:text-primary-dark transition-colors no-underline ${lang !== "en" ? "break-keep" : "break-normal"} ${item.path === "" ? "active-nav" : ""}`}
+                class={`text-sm @7xl:text-base nav-item text-foreground hover:text-primary-dark transition-colors no-underline ${lang !== "en" ? "break-keep" : "break-normal"} ${item.path === "" ? "active-nav" : ""}`}
               >
                 {item.label}
               </a>
@@ -73,12 +73,17 @@ const navItems = [
       </ul>
     </div>
 
-    <div>
+    <div class="hidden @4xl:block">
       <LanguageSwitcher
         client:load
         currentLang={lang}
         route={getRouteFromUrl(Astro.url)}
       />
+    </div>
+
+    <!-- Hamburger Menu for smaller screen sizes -->
+    <div class="block @4xl:hidden relative">
+      <MobileNav lang={lang} navItems={navItems} client:load />
     </div>
   </nav>
 </header>
@@ -104,12 +109,16 @@ const navItems = [
           item.classList.remove("active-nav");
         }
       });
+
+      window.dispatchEvent(
+        new CustomEvent("sectionchange", { detail: { sectionId } })
+      );
     }
 
     const observerOptions = {
       root: null,
-      threshold: 0,
-      rootMargin: "-20% 0px -60% 0px",
+      threshold: 0.15,
+      rootMargin: "-80px 0px -80px 0px",
     };
 
     const sectionObserver = new IntersectionObserver((entries) => {
@@ -134,13 +143,13 @@ const navItems = [
     navItems.forEach((item) => {
       item.addEventListener("click", function (this: HTMLElement) {
         const sectionId = this.getAttribute("data-section");
-        setActiveNavItem(sectionId || "");
+        setActiveNavItem(sectionId || "home");
       });
     });
 
     function checkInitialHash() {
       const hash = window.location.hash.substring(1);
-      setActiveNavItem(hash || "");
+      setActiveNavItem(hash || "home");
     }
 
     window.addEventListener("hashchange", checkInitialHash);
@@ -192,40 +201,3 @@ const navItems = [
     }
   });
 </script>
-
-<style>
-  .fixed-nav {
-    position: fixed !important;
-    animation: slideDown 0.3s ease-out;
-  }
-
-  .active-nav {
-    font-weight: 600;
-    position: relative;
-    color: var(--primary-dark) !important;
-  }
-
-  .active-nav::after {
-    content: "";
-    position: absolute;
-    bottom: -23px;
-    left: 0;
-    width: 100%;
-    height: 3px;
-    border-radius: 1px;
-    background-color: var(--primary-dark);
-  }
-
-  @keyframes slideDown {
-    from {
-      transform: translateY(-100%);
-    }
-    to {
-      transform: translateY(0);
-    }
-  }
-
-  body.has-fixed-nav {
-    padding-top: var(--nav-height, 80px);
-  }
-</style>
