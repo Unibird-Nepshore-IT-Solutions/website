@@ -83,7 +83,7 @@ const navItems = [
 
     <!-- Hamburger Menu for smaller screen sizes -->
     <div class="block @4xl:hidden relative">
-      <MobileNav lang={lang} navItems={navItems} client:load />
+      <MobileNav url={Astro.url} lang={lang} navItems={navItems} client:load />
     </div>
   </nav>
 </header>

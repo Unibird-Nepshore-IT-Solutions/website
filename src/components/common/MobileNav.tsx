@@ -1,6 +1,9 @@
 import { Menu, X } from "lucide-react";
 import { useState, useEffect } from "react";
 
+import type { Language } from "@/i18n/ui";
+import { getRouteFromUrl } from "@/i18n/utils";
+
 import {
   Drawer,
   DrawerClose,
@@ -10,6 +13,7 @@ import {
   DrawerTrigger,
   DrawerDescription,
 } from "@/components/ui/drawer";
+import LanguageSwitcher from "./LanguageSwitcher";
 
 interface NavItems {
   path: string;
@@ -17,11 +21,12 @@ interface NavItems {
 }
 
 interface MobileNavProps {
-  lang: string;
+  url: URL;
+  lang: Language;
   navItems: NavItems[];
 }
 
-export const MobileNav = ({ lang, navItems }: MobileNavProps) => {
+export const MobileNav = ({ url, lang, navItems }: MobileNavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
@@ -69,7 +74,8 @@ export const MobileNav = ({ lang, navItems }: MobileNavProps) => {
       </DrawerTrigger>
       <DrawerContent>
         <DrawerHeader>
-          <DrawerTitle className="flex justify-end">
+          <DrawerTitle className="flex justify-between">
+            <LanguageSwitcher currentLang={lang} route={getRouteFromUrl(url)} />
             <DrawerClose asChild>
               <button aria-label="Close menu">
                 <X />
