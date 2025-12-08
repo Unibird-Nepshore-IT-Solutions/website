@@ -1,20 +1,108 @@
 {
   "title": "UnibirdNepshore I.T. Solutions Pvt. Ltd.",
-  "need_help": "プロジェクトを開始するためにお困りですか？",
-  "request_for_a_call": "電話をリクエスト",
+  "need_help": "プロジェクトの開始にお困りですか？",
+  "request_for_a_call": "お電話のご依頼",
+  "close": "閉じる",
   "nav": {
     "home": "ホーム",
     "services": "サービス",
-    "about": "私たちについて",
+    "about": "会社概要",
     "testimonials": "お客様の声",
-    "service_area": "サービスエリア",
-    "our_products": "当社の製品",
+    "our_products": "製品紹介",
     "why_us": "選ばれる理由",
     "contact": "お問い合わせ"
   },
   "hero": {
-    "title": "複雑な世界のために IT を簡素化します",
-    "title1": "ITを簡素化します",
-    "title2": "コンプレックスワールド"
+    "title": "複雑な世界のためのシンプルなIT",
+    "title1": "複雑な世界のための",
+    "title2": "シンプルなIT",
+    "subtitle": "お客様の成長を支える最高のサービスを提供します。私たちと共に、期待を超える成功を手に入れましょう。",
+    "enter_your_email_address": "メールアドレスを入力してください",
+    "email_us": "メールでお問い合わせ",
+    "projects_completed": "完了プロジェクト数",
+    "years_of_experience": "年の実績",
+    "clients_involved": "お取引先数",
+    "got_any_project": "プロジェクトをお持ちですか？",
+    "lets_get_started": "さあ、始めましょう！"
+  },
+  "services": {
+    "our_services": "サービス内容",
+    "tailored_professional_assistance": "カスタマイズされた専門的サポート",
+    "web_development": "ウェブ開発",
+    "web_development_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。",
+    "it_support_and_maintenance": "ITサポート＆メンテナンス",
+    "it_support_and_maintenance_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。",
+    "e_commerce_solution": "Eコマースソリューション",
+    "e_commerce_solution_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。",
+    "cloud_and_hosting": "クラウド＆ホスティング",
+    "cloud_and_hosting_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。"
+  },
+  "about": {
+    "about_us": "会社概要",
+    "empowering_business": "テクノロジーでビジネスを強化",
+    "empowering_business_desc": "私たちは、スマートでスケーラブル、かつ安全なテクノロジーソリューションでお客様のビジネスを変革することに情熱を注ぐITプロフェッショナルのチームです。戦略から実行まで、イノベーションの力を活用して効率性、成長、成功を推進するお手伝いをします。",
+    "get_close_to_more_professionals": "15人以上の専門家と繋がる",
+    "receive_the_greatest_results": "私たちから最高の結果を受け取る",
+    "best_in_business": "業界最高",
+    "best_in_business_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。",
+    "247_support": "24時間365日サポート",
+    "247_support_desc": "最高のサービスを提供し、便利なサプライヤーとしてお客様をサポートしています。"
+  },
+  "products": {
+    "our_products": "製品紹介",
+    "empowering_your_digital_future": "デジタルの未来を強化",
+    "mbn": "MBN 電子取引",
+    "mbn_desc": "MBN 電子取引のウェブサイトは、請求書の作成・配信から受領、電子帳簿記録、アーカイブまで、企業間取引ワークフローを効率化するクラウドベースのプラットフォームを提供します。",
+    "key_features": "主な機能",
+    "mbn_feature_1": "請求書、見積書、発注書、納品書、領収書の送受信と保管を一つの統合プラットフォームでサポート。",
+    "mbn_feature_2": "既存の請求書PDFのアップロードと送信が可能。",
+    "mbn_feature_3": "受信者が請求書を受け取ったことを確認するメール通知 — 送受信の可視性。",
+    "skysales": "SKYSALES",
+    "skysales_desc": "SKYSALESは、個人事業主から大企業まで、独自のブランドデジタルエコシステムを構築・運営できる柔軟なクラウドベースのビジネスプラットフォームです。独自の「マイプラットフォーム」スペースを立ち上げ、ライブコマース、ウェビナー、イベント、Eコマースをホストできます。",
+    "skysales_feature_1": "ライブビデオ販売（LIVEコマース）と標準的なEコマースストアフロント機能をサポート。",
+    "skysales_feature_2": "投稿やタイムライン更新を通じてユーザー・顧客とエンゲージメント。",
+    "skysales_feature_3": "内蔵カレンダーとミーティングツールでオンライン会議をシームレスにスケジュール、招待、参加。"
+  },
+  "testimonials": {
+    "testimonials": "お客様の声",
+    "what_clients_say_about_us": "お客様からの評価"
+  },
+  "work": {
+    "where_we_work": "活動地域",
+    "global_presence_at_footsteps": "世界中でお客様のすぐそばに",
+    "head_office_japan": "本社（日本）",
+    "call_us_now": "今すぐお電話を",
+    "mail_us": "メールでお問い合わせ",
+    "branch_office_nepal": "支社（ネパール）"
+  },
+  "faq": {
+    "faqs": "よくある質問",
+    "provide_solution_to_every_queries": "すべてのご質問に解決策を提供します！",
+    "what_services": "UnibirdNepshore I.T. Solutions Pvt.Ltd.はどのようなサービスを提供していますか？",
+    "what_services_desc": "お客様のビジネスの成長と効率的な運営を支援するカスタマイズされたITソリューションを提供します。カスタムソフトウェアやウェブ開発からモバイルアプリ、ITコンサルティングまで、お客様独自のニーズに合わせたテクノロジーソリューションを作成します。",
+    "how_can_unibird": "UnibirdNepshore I.T. Solutions Pvt. Ltd.は私のビジネスをどのように支援できますか？",
+    "how_can_unibird_desc": "お客様のビジネスの成長と効率的な運営を支援するカスタマイズされたITソリューションを提供します。カスタムソフトウェアやウェブ開発からモバイルアプリ、ITコンサルティングまで、お客様独自のニーズに合わせたテクノロジーソリューションを作成します。",
+    "can_i_get_support": "プロジェクト完了後もサポートを受けられますか？",
+    "can_i_get_support_desc": "お客様のビジネスの成長と効率的な運営を支援するカスタマイズされたITソリューションを提供します。カスタムソフトウェアやウェブ開発からモバイルアプリ、ITコンサルティングまで、お客様独自のニーズに合わせたテクノロジーソリューションを作成します。",
+    "what_technologies_does_unibird": "UnibirdNepshore I.T. Solutions Pvt. Ltd.はどのような技術を専門としていますか？",
+    "what_technologies_does_unibird_desc": "お客様のビジネスの成長と効率的な運営を支援するカスタマイズされたITソリューションを提供します。カスタムソフトウェアやウェブ開発からモバイルアプリ、ITコンサルティングまで、お客様独自のニーズに合わせたテクノロジーソリューションを作成します。",
+    "how_do_i_get_started": "UnibirdNepshore I.T. Solutions Pvt. Ltd.を始めるにはどうすればよいですか？",
+    "how_do_i_get_started_desc": "お客様のビジネスの成長と効率的な運営を支援するカスタマイズされたITソリューションを提供します。カスタムソフトウェアやウェブ開発からモバイルアプリ、ITコンサルティングまで、お客様独自のニーズに合わせたテクノロジーソリューションを作成します。"
+  },
+  "contact": {
+    "contact_us": "お問い合わせ",
+    "thinking_about_a_project": "プロジェクトをお考えですか？",
+    "contact_us_desc": "今すぐお問い合わせください！お客様のアイデアを実現したり、私たちの仕事についてより深く知っていただくお手伝いをします。繋がりましょう。",
+    "enter_your_number": "電話番号を入力してください"
+  },
+  "footer": {
+    "subscribe_to_our_newsletter": "ニュースレターに登録",
+    "footer_desc": "ウェブ・モバイルアプリ開発からソフトウェアソリューション、コンサルティングまで、エンドツーエンドのITサービスを提供します。",
+    "subscribe_us": "登録する",
+    "location": "所在地",
+    "quick_links": "クイックリンク",
+    "services": "サービス",
+    "technology_used": "使用技術",
+    "copyright": "著作権"
   }
 }
