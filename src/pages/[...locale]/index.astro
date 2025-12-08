@@ -5,6 +5,7 @@ import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import FAQs from "@/components/FAQs.astro";
 import Banner from "@/components/Banner.astro";
 import AboutUs from "@/components/AboutUs.astro";
+import Contacts from "@/components/Contacts.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 import OurServices from "@/components/OurServices.astro";
 import OurProducts from "@/components/OurProducts.astro";
@@ -26,4 +27,5 @@ const t = useTranslations(lang);
   <Testimonials />
   <WhereWeWork />
   <FAQs />
+  <Contacts />
 </BaseLayout>

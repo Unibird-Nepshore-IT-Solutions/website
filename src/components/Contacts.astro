@@ -1,0 +1,45 @@
+---
+import { Button } from "@components/ui/button.tsx";
+import { getLangFromUrl, useTranslations } from "@/i18n/utils";
+
+const lang = getLangFromUrl(Astro.url);
+const t = useTranslations(lang);
+---
+
+<section id="contact" class="py-24 pl-28 pr-12">
+  <h2 class="text-base text-secondary text-center">
+    {t("contact.contact_us")}
+  </h2>
+  <h3 class="text-[40px] font-bold text-center">
+    {t("contact.thinking_about_a_project")}
+  </h3>
+
+  <div class="mt-10 max-w-3xl mx-auto">
+    <p class="text-base text-secondary-text text-center">
+      {t("contact.contact_us_desc")}
+    </p>
+
+    <form
+      action=""
+      class="w-full max-w-[420px] flex items-center justify-center h-12 mt-5 mx-auto"
+    >
+      <div
+        class="h-full w-full flex items-center border p-2 text-text-placeholder"
+      >
+        <select class="text-secondary-text border-r text-base pr-1">
+          <option value="977">+977</option>
+          <option value="81">+81</option>
+        </select>
+        <input
+          required
+          type="tel"
+          placeholder={t("contact.enter_your_number")}
+          class="w-full h-full placeholder:text-base placeholder:text-secondary-text pl-2 focus:outline-0"
+        />
+      </div>
+      <Button className="rounded-none px-4 py-4 h-full w-36 text-base">
+        {t("contact.contact_us")}
+      </Button>
+    </form>
+  </div>
+</section>
