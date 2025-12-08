@@ -75,7 +75,7 @@ const navItems = [
 
     <div>
       <LanguageSwitcher
-        client:only="react"
+        client:load
         currentLang={lang}
         route={getRouteFromUrl(Astro.url)}
       />
