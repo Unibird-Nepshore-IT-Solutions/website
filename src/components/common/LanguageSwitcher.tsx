@@ -74,6 +74,7 @@ export default function LanguageSwitcher({
               >
                 {label.split(" ").map((item, index) => (
                   <span
+                    key={index}
                     className={
                       index === 0 && currentLang !== langCode
                         ? "text-secondary-text"
