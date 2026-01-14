@@ -38,7 +38,7 @@ const products = [
   <h2 class="text-base text-secondary text-center">
     {t("products.our_products")}
   </h2>
-  <h3 class="text-3xl md:text-4xl lg:text-[40px] font-bold text-center">
+  <h3 class="text-2xl md:text-4xl lg:text-[40px] font-bold text-center">
     {t("products.empowering_your_digital_future")}
   </h3>
 
@@ -46,35 +46,42 @@ const products = [
     {
       products.map((product, index) => (
         <div class={`fade-slide slide-${index + 1} [grid-area:1/1]`}>
-          <div class="flex flex-col-reverse lg:flex-row gap-10 items-center lg:items-start pb-8">
+          <div class="flex flex-col-reverse lg:flex-row gap-16 items-center pb-8">
             {/* Left Section */}
-            <div class="w-full lg:w-1/2 flex flex-col gap-4 text-center lg:text-left">
-              <h4 class="font-bold text-2xl md:text-[32px]">{product.title}</h4>
-              <p class="text-sm md:text-base leading-relaxed">
+            <div class="w-full lg:w-3/5 flex flex-col gap-4 text-center lg:text-left py-4">
+              <h4 class="font-bold text-3xl md:text-[40px] leading-tight text-primary">
+                {product.title}
+              </h4>
+              <p class="text-sm md:text-base leading-relaxed text-secondary-text">
                 {product.description}
               </p>
-              <h5 class="font-bold text-lg md:text-xl">
+              <h5 class="font-bold text-lg md:text-xl mt-4">
                 {t("products.key_features")}
               </h5>
               <ul class="list-disc flex flex-col gap-2 text-left px-4 md:px-6 lg:px-4">
                 {product.features.map((feature) => (
-                  <li class="text-sm md:text-base">{feature}</li>
+                  <li class="text-sm md:text-base text-secondary-text">
+                    {feature}
+                  </li>
                 ))}
               </ul>
             </div>
 
             {/* Right Section */}
-            <div class="w-full lg:w-1/2 flex items-center justify-center">
-              <div class="relative w-full max-w-[280px] sm:max-w-[350px] aspect-square">
-                {/* Circle background */}
-                <div class="absolute inset-0 rounded-full bg-accent" />
-                <Image
-                  width={300}
-                  height={300}
-                  alt="Our Product"
-                  src={product.image}
-                  class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[110%] h-auto max-w-none object-contain"
-                />
+            <div class="w-full lg:w-2/5 flex items-center justify-center pt-8 lg:pt-0">
+              <div class="relative w-full max-w-[260px] sm:max-w-[400px] aspect-square flex items-center justify-center group">
+                {/* Background Full Circle */}
+                <div class="absolute inset-4 rounded-full bg-accent/60 transition-all duration-500 group-hover:bg-accent group-hover:scale-101 shadow-inner" />
+
+                <div class="relative w-full h-full transform transition-all duration-500 group-hover:translate-y-[-10px] group-hover:scale-101 flex items-center justify-center">
+                  <Image
+                    width={500}
+                    height={500}
+                    alt={product.title}
+                    src={product.image}
+                    class="w-full h-full object-contain scale-105 md:scale-110 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)]"
+                  />
+                </div>
               </div>
             </div>
           </div>
