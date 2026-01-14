@@ -1,7 +1,12 @@
 ---
 import { CircleXIcon } from "lucide-react";
 
-import { getLangFromUrl, getRouteFromUrl, useTranslations } from "@/i18n/utils";
+import {
+  getAssetPath,
+  getLangFromUrl,
+  getRouteFromUrl,
+  useTranslations,
+} from "@/i18n/utils";
 
 import "@styles/Header.css";
 import { MobileNav } from "./MobileNav.tsx";
@@ -49,8 +54,7 @@ const navItems = [
         alt="Logo"
         width={55}
         height={48}
-        src={import.meta.env.BASE_URL.replace(/\/$/, "") +
-          "/assets/images/logo.png"}
+        src={getAssetPath("/assets/images/logo.png")}
         class="size-full block object-contain"
       />
     </a>

@@ -23,7 +23,10 @@ export default function LanguageSwitcher({
         <div className="size-6 overflow-hidden rounded-md">
           <img
             alt={"Flag"}
-            src={`/assets/images/${
+            src={`${import.meta.env.BASE_URL.replace(
+              /\/$/,
+              ""
+            )}/assets/images/${
               currentLang === "en"
                 ? "US.webp"
                 : currentLang === "ja"
@@ -57,7 +60,10 @@ export default function LanguageSwitcher({
               <div className="size-6 overflow-hidden rounded-md">
                 <img
                   alt={"Flag"}
-                  src={`/assets/images/${
+                  src={`${import.meta.env.BASE_URL.replace(
+                    /\/$/,
+                    ""
+                  )}/assets/images/${
                     langCode === "en"
                       ? "US.webp"
                       : langCode === "ja"

@@ -54,4 +54,16 @@ const getLocalizedPath = (path: string, locale: Language): string => {
   return `${base}/${locale}/${cleanPath}`;
 };
 
-export { getLangFromUrl, useTranslations, getRouteFromUrl, getLocalizedPath };
+const getAssetPath = (path: string): string => {
+  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  return `${base}/${cleanPath}`;
+};
+
+export {
+  getLangFromUrl,
+  useTranslations,
+  getRouteFromUrl,
+  getLocalizedPath,
+  getAssetPath,
+};
