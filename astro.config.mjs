@@ -1,17 +1,13 @@
 import { loadEnv } from "vite";
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
-
 import react from "@astrojs/react";
 
-const { PUBLIC_APP_URL } = loadEnv(
-  process.env.PUBLIC_APP_URL,
-  process.cwd(),
-  ""
-);
+const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
 export default defineConfig({
-  site: PUBLIC_APP_URL,
+  site: env.PUBLIC_APP_URL,
+  base: env.PUBLIC_BASE_URL,
 
   vite: {
     plugins: [tailwindcss()],
