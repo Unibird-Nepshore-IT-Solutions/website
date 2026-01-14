@@ -24,9 +24,15 @@ interface MobileNavProps {
   url: URL;
   lang: Language;
   navItems: NavItems[];
+  flagPath: string;
 }
 
-export const MobileNav = ({ url, lang, navItems }: MobileNavProps) => {
+export const MobileNav = ({
+  url,
+  lang,
+  navItems,
+  flagPath,
+}: MobileNavProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
@@ -75,7 +81,11 @@ export const MobileNav = ({ url, lang, navItems }: MobileNavProps) => {
       <DrawerContent>
         <DrawerHeader>
           <DrawerTitle className="flex justify-between">
-            <LanguageSwitcher currentLang={lang} route={getRouteFromUrl(url)} />
+            <LanguageSwitcher
+              currentLang={lang}
+              route={getRouteFromUrl(url)}
+              flagPath={flagPath}
+            />
             <DrawerClose asChild>
               <button aria-label="Close menu">
                 <X />

@@ -45,6 +45,10 @@ const testimonials = [
   </h3>
 
   <div class="w-full flex justify-center mt-10">
-    <CarouselComp client:only="react" slides={testimonials} />
+    <CarouselComp
+      client:only="react"
+      slides={testimonials}
+      quotePath={getAssetPath("/assets/svgs/quote.svg")}
+    />
   </div>
 </section>

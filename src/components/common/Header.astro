@@ -83,12 +83,18 @@ const navItems = [
         client:load
         currentLang={lang}
         route={getRouteFromUrl(Astro.url)}
+        flagPath={getAssetPath("/assets/images")}
       />
     </div>
 
-    <!-- Hamburger Menu for smaller screen sizes -->
     <div class="block @4xl:hidden relative">
-      <MobileNav url={Astro.url} lang={lang} navItems={navItems} client:load />
+      <MobileNav
+        url={Astro.url}
+        lang={lang}
+        navItems={navItems}
+        flagPath={getAssetPath("/assets/images")}
+        client:load
+      />
     </div>
   </nav>
 </header>

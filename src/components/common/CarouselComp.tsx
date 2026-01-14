@@ -17,7 +17,13 @@ interface CarouselCompProps {
   clientPosition: string;
 }
 
-export const CarouselComp = ({ slides }: { slides: CarouselCompProps[] }) => {
+export const CarouselComp = ({
+  slides,
+  quotePath,
+}: {
+  slides: CarouselCompProps[];
+  quotePath: string;
+}) => {
   const [current, setCurrent] = useState(0);
   const [api, setApi] = useState<CarouselApi>();
 
@@ -70,10 +76,7 @@ export const CarouselComp = ({ slides }: { slides: CarouselCompProps[] }) => {
                       height={48}
                       alt="Quote"
                       className="text-sm"
-                      src={`${import.meta.env.BASE_URL.replace(
-                        /\/$/,
-                        ""
-                      )}/assets/svgs/quote.svg`}
+                      src={quotePath}
                     />
                   </div>
                   <p className="text-secondary-text text-center leading-relaxed">
