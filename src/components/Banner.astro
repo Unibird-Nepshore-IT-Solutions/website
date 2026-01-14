@@ -9,60 +9,87 @@ const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 ---
 
-<main id="home" class="h-full w-full">
-  <div class="flex flex-col md:flex-row gap-8 relative">
+<main
+  id="home"
+  class="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,var(--accent)_0%,transparent_40%)]"
+>
+  <div
+    class="flex flex-col md:flex-row gap-8 lg:gap-0 relative min-h-[600px] md:min-h-[700px]"
+  >
     <!-- Left Section -->
     <div
-      class="flex flex-col gap-6 justify-center w-full md:w-[55%] px-6 md:px-12 lg:px-28 md:pr-0 pt-12 md:pt-0"
+      class="flex flex-col gap-8 justify-center w-full md:w-[55%] px-6 md:px-12 lg:pl-28 lg:pr-12 pt-16 md:pt-0 z-10"
     >
-      {
-        lang === "en" ? (
-          <div class="flex flex-col gap-2 text-center md:text-left">
-            <h1 class="text-4xl md:text-5xl xl:text-6xl">{t("hero.title1")}</h1>
-            <h1 class="text-secondary-text text-4xl md:text-5xl xl:text-6xl">
-              {t("hero.title2")}
+      <div class="animate-slide-up">
+        {
+          lang === "en" ? (
+            <div class="flex flex-col gap-3 text-center md:text-left">
+              <h1 class="text-4xl md:text-5xl xl:text-7xl font-extrabold tracking-tight leading-tight">
+                {t("hero.title1")}
+              </h1>
+              <h1 class="text-secondary-text text-4xl md:text-5xl xl:text-7xl font-extrabold tracking-tight leading-tight">
+                {t("hero.title2")}
+              </h1>
+            </div>
+          ) : (
+            <h1 class="text-4xl md:text-5xl xl:text-7xl font-extrabold text-center md:text-left tracking-tight leading-tight">
+              {t("hero.title")}
             </h1>
-          </div>
-        ) : (
-          <h1 class="text-4xl md:text-5xl xl:text-6xl text-center md:text-left">
-            {t("hero.title")}
-          </h1>
-        )
-      }
-      <p class="text-secondary-text text-center md:text-left">
+          )
+        }
+      </div>
+
+      <p
+        class="text-secondary-text text-lg md:text-xl text-center md:text-left max-w-2xl mx-auto md:mx-0 animate-fade-in delay-100"
+      >
         {t("hero.subtitle")}
       </p>
+
       <form
         action=""
-        class="w-full flex items-center justify-center md:justify-start gap-1 h-12"
+        class="w-full flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 animate-fade-in delay-200"
       >
-        <div class="h-full min-w-4 w-full max-w-[300px]">
+        <div class="h-14 w-full sm:max-w-[320px] group">
           <input
             type="text"
-            class="p-2 px-3 border w-full h-full placeholder:text-base"
+            class="px-5 border border-border w-full h-full bg-background transition-all focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none text-base shadow-sm group-hover:shadow-md"
             placeholder={t("hero.enter_your_email_address")}
           />
         </div>
         <Button
-          className="rounded-none px-4 py-4 h-full w-auto min-w-28 xl:w-36 text-sm md:text-base"
-          >{t("hero.email_us")}</Button
+          className="rounded-none px-8 py-4 h-14 w-full sm:w-auto bg-primary hover:bg-primary-dark text-primary-foreground font-semibold text-base shadow-lg hover:shadow-primary/30 transition-all duration-300"
         >
+          {t("hero.email_us")}
+        </Button>
       </form>
-      <div class="hidden xl:block absolute left-0 bottom-0 w-[80%] h-28">
-        <BannerStats />
-      </div>
     </div>
+
     <!-- Right Section -->
-    <div class="w-full md:w-[45%] overflow-hidden h-[300px] md:h-auto">
+    <div
+      class="w-full md:w-[45%] relative h-[400px] md:h-auto overflow-hidden animate-fade-in delay-300"
+    >
+      <div
+        class="absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-background to-transparent md:hidden z-10"
+      >
+      </div>
       <Image
-        width={500}
-        height={600}
+        width={800}
+        height={1000}
         alt={"Banner Image"}
-        class="size-full block object-cover"
+        class="size-full block object-cover md:rounded-bl-[100px]"
         src={"/assets/images/banner-img.webp"}
       />
     </div>
+
+    <!-- Banner Stats overlapping into the image -->
+    <div
+      class="hidden xl:block absolute left-0 bottom-0 w-[80%] h-28 z-20 animate-slide-up delay-500"
+    >
+      <BannerStats />
+    </div>
   </div>
 
-  <div class="xl:hidden mt-8 px-6 md:px-12"><BannerStats /></div>
+  <div class="xl:hidden mt-4 pb-12 px-6 md:px-12 animate-slide-up delay-500">
+    <BannerStats />
+  </div>
 </main>
