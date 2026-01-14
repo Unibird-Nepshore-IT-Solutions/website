@@ -34,7 +34,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
+      - name: Install, build, and upload your site
+        uses: withastro/action@v5
+        with:
+          branch: main
+          build_command: astro build
+          deploy_command: astro deploy
+        env:
+          PUBLIC_APP_URL: ${{ secrets.PUBLIC_APP_URL }}
       - name: Detect package manager
         id: detect-package-manager
         run: |
