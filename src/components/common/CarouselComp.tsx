@@ -7,6 +7,7 @@ import {
   CarouselContent,
   type CarouselApi,
 } from "@/components/ui/carousel";
+import { getAssetPath } from "@/i18n/utils";
 
 interface CarouselCompProps {
   id: number;
@@ -70,7 +71,7 @@ export const CarouselComp = ({ slides }: { slides: CarouselCompProps[] }) => {
                       height={48}
                       alt="Quote"
                       className="text-sm"
-                      src="/assets/svgs/quote.svg"
+                      src={getAssetPath("/assets/svgs/quote.svg")}
                     />
                   </div>
                   <p className="text-secondary-text text-center leading-relaxed">
