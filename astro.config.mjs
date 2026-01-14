@@ -10,11 +10,9 @@ const site =
   (process.env.GITHUB_REPOSITORY
     ? `https://${process.env.GITHUB_REPOSITORY.split("/")[0]}.github.io`
     : "https://Unibird-Nepshore-IT-Solutions.github.io");
-const base =
-  env.PUBLIC_BASE_URL ||
-  (process.env.GITHUB_REPOSITORY
-    ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}`
-    : "/website");
+const base = process.env.GITHUB_REPOSITORY
+  ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}`
+  : "/";
 
 export default defineConfig({
   site,
@@ -28,7 +26,7 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "ja", "np"],
     routing: {
-      prefixDefaultLocale: true,
+      prefixDefaultLocale: false,
     },
   },
 

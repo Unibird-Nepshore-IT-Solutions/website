@@ -1,5 +1,5 @@
 ---
-import { languages } from "@/i18n/ui";
+import { defaultLang, languages } from "@/i18n/ui";
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 import FAQs from "@/components/FAQs.astro";
@@ -13,7 +13,9 @@ import WhereWeWork from "@/components/WhereWeWork.astro";
 import Testimonials from "@/components/Testimonials.astro";
 
 export const getStaticPaths = () =>
-  Object.keys(languages).map((locale) => ({ params: { locale } }));
+  Object.keys(languages)
+    .filter((l) => l !== defaultLang)
+    .map((locale) => ({ params: { locale } }));
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);

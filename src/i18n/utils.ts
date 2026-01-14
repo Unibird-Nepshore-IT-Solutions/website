@@ -51,6 +51,9 @@ const getRouteFromUrl = (url: URL) => {
 const getLocalizedPath = (path: string, locale: Language): string => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, "");
   const cleanPath = path.startsWith("/") ? path.slice(1) : path;
+  if (locale === defaultLang) {
+    return `${base}/${cleanPath}`;
+  }
   return `${base}/${locale}/${cleanPath}`;
 };
 
