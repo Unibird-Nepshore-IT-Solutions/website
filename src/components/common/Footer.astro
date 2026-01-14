@@ -21,11 +21,16 @@ const whereWeWork = {
 };
 ---
 
-<footer id="footer" class="pt-24 pl-28 pr-12 bg-primary">
+<footer
+  id="footer"
+  class="pt-12 md:pt-24 px-6 md:px-12 lg:pl-28 lg:pr-12 bg-primary"
+>
   <div
-    class="flex items-center justify-between border-b border-background pb-12"
+    class="flex flex-col lg:flex-row items-center justify-between border-b border-background pb-12 gap-6"
   >
-    <h1 class="text-primary-foreground">
+    <h1
+      class="text-primary-foreground text-2xl md:text-3xl text-center lg:text-left"
+    >
       {t("footer.subscribe_to_our_newsletter")}
     </h1>
     <form
@@ -35,100 +40,117 @@ const whereWeWork = {
       <div class="h-full min-w-4 w-full">
         <input
           type="text"
-          class="p-2 px-3 w-full h-full placeholder:text-base"
+          class="p-2 px-3 w-full h-full placeholder:text-base text-black"
           placeholder={t("hero.enter_your_email_address")}
         />
       </div>
-      <Button className="rounded-none px-4 py-4 h-full w-36 text-base"
+      <Button
+        className="rounded-none px-4 py-4 h-full w-auto min-w-28 md:w-36 text-sm md:text-base"
         >{t("footer.subscribe_us")}</Button
       >
     </form>
   </div>
 
   <div
-    class="pt-12 flex justify-between gap-12 border-b border-background pb-12"
+    class="pt-12 flex flex-col md:flex-row flex-wrap lg:flex-nowrap justify-between gap-12 border-b border-background pb-12"
   >
-    <div class="flex flex-col gap-3 max-w-[40%] w-full">
+    <div class="flex flex-col gap-3 w-full lg:max-w-[30%]">
       <h2 class="text-base font-bold text-primary-foreground opacity-70">
         {t("about.about_us")}
       </h2>
-      <p class="text-primary-foreground">{t("footer.footer_desc")}</p>
-      <p class="text-primary-foreground">
+      <p class="text-primary-foreground text-sm md:text-base">
+        {t("footer.footer_desc")}
+      </p>
+      <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("work.call_us_now")}: `}</span>
         <span>{whereWeWork.jpn.phone}</span>
       </p>
-      <p class="text-primary-foreground">
+      <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("work.mail_us")}: `}</span>
         <span>{whereWeWork.jpn.mail}</span>
       </p>
-      <p class="text-primary-foreground">
+      <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("footer.location")}: `}</span>
         <span>{whereWeWork.jpn.address}</span>
       </p>
     </div>
-    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+    <div class="flex flex-col gap-3 w-full md:w-[45%] lg:w-auto">
       <h2 class="text-base font-bold text-primary-foreground opacity-70">
         {t("footer.quick_links")}
       </h2>
       <ul class="flex flex-col gap-3">
         <li>
-          <a href="#about-us" class="text-primary-foreground no-underline"
+          <a
+            href="#about-us"
+            class="text-primary-foreground no-underline text-sm md:text-base"
             >{t("nav.about")}</a
           >
         </li>
         <li>
-          <a href="#testimonials" class="text-primary-foreground no-underline"
+          <a
+            href="#testimonials"
+            class="text-primary-foreground no-underline text-sm md:text-base"
             >{t("nav.testimonials")}</a
           >
         </li>
         <li>
-          <a href="#our-products" class="text-primary-foreground no-underline"
+          <a
+            href="#our-products"
+            class="text-primary-foreground no-underline text-sm md:text-base"
             >{t("nav.our_products")}</a
           >
         </li>
         <li>
-          <a href="#why-us" class="text-primary-foreground no-underline"
+          <a
+            href="#why-us"
+            class="text-primary-foreground no-underline text-sm md:text-base"
             >{t("nav.why_us")}</a
           >
         </li>
         <li>
-          <a href="#contact" class="text-primary-foreground no-underline"
+          <a
+            href="#contact"
+            class="text-primary-foreground no-underline text-sm md:text-base"
             >{t("nav.contact")}</a
           >
         </li>
       </ul>
     </div>
-    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+    <div class="flex flex-col gap-3 w-full md:w-[45%] lg:w-auto">
       <h2 class="text-base font-bold text-primary-foreground opacity-70">
         {t("footer.services")}
       </h2>
       <ul class="flex flex-col gap-3">
-        <li class="text-primary-foreground">{t("services.web_development")}</li>
-        <li class="text-primary-foreground">
+        <li class="text-primary-foreground text-sm md:text-base">
+          {t("services.web_development")}
+        </li>
+        <li class="text-primary-foreground text-sm md:text-base">
           {t("services.it_support_and_maintenance")}
         </li>
-        <li class="text-primary-foreground">
+        <li class="text-primary-foreground text-sm md:text-base">
           {t("services.e_commerce_solution")}
         </li>
-        <li class="text-primary-foreground">
+        <li class="text-primary-foreground text-sm md:text-base">
           {t("services.cloud_and_hosting")}
         </li>
       </ul>
     </div>
-    <div class="flex flex-col gap-3 max-w-[20%] w-full">
+    <div class="flex flex-col gap-3 w-full md:w-[45%] lg:w-auto">
       <h2 class="text-base font-bold text-primary-foreground opacity-70">
         {t("footer.technology_used")}
       </h2>
       <ul class="flex flex-col gap-3">
-        <li class="text-primary-foreground">Node JS</li>
-        <li class="text-primary-foreground">Next JS</li>
-        <li class="text-primary-foreground">Figma</li>
-        <li class="text-primary-foreground">Laravel</li>
+        <li class="text-primary-foreground text-sm md:text-base">Node JS</li>
+        <li class="text-primary-foreground text-sm md:text-base">Next JS</li>
+        <li class="text-primary-foreground text-sm md:text-base">Figma</li>
+        <li class="text-primary-foreground text-sm md:text-base">Laravel</li>
       </ul>
     </div>
   </div>
 
-  <p class="w-full flex justify-center py-4 text-primary-foreground">
+  <p
+    class="w-full flex justify-center py-4 text-primary-foreground text-center text-sm md:text-base"
+  >
     &copy; {t("footer.copyright")} Unibird Inc. - 2020-{
       new Date().getFullYear()
     }
