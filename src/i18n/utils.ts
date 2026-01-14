@@ -55,7 +55,7 @@ const getLocalizedPath = (path: string, locale: Language): string => {
 };
 
 const getAssetPath = (path: string): string => {
-  const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+  const base = (import.meta.env.BASE_URL || "/").replace(/\/$/, "");
   const cleanPath = path.startsWith("/") ? path.slice(1) : path;
   return `${base}/${cleanPath}`;
 };
