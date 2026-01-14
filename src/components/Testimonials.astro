@@ -13,7 +13,9 @@ const testimonials = [
     clientCompany: "ABC Company",
     testimonial:
       "There are numerous different versions of portions from Lorem Ipsum that are available, but the most have been changed in some way, usually by adding humor or randomizing phrases that don't look the slightest bit plausible.",
-    clientProfile: import.meta.env.BASE_URL + "assets/images/profile-1.webp",
+    clientProfile:
+      import.meta.env.BASE_URL.replace(/\/$/, "") +
+      "/assets/images/profile-1.webp",
   },
   {
     id: 2,
@@ -22,7 +24,9 @@ const testimonials = [
     clientCompany: "XYZ Company",
     testimonial:
       "The most have been changed in some way, usually by adding humor or randomizing phrases that don't look the slightest bit plausible.  Lorem Ipsum that are available. There are numerous different versions of portions from Lorem Ipsum that are available.",
-    clientProfile: import.meta.env.BASE_URL + "assets/images/profile-2.webp",
+    clientProfile:
+      import.meta.env.BASE_URL.replace(/\/$/, "") +
+      "/assets/images/profile-2.webp",
   },
   {
     id: 3,
@@ -31,7 +35,9 @@ const testimonials = [
     clientCompany: "JD Company",
     testimonial:
       "The most have been changed in some way, usually by adding humor or randomizing phrases that don't look the slightest bit plausible. There are numerous different versions of portions from. There are numerous different versions of portions from Lorem Ipsum that are available.",
-    clientProfile: import.meta.env.BASE_URL + "assets/images/profile-3.webp",
+    clientProfile:
+      import.meta.env.BASE_URL.replace(/\/$/, "") +
+      "/assets/images/profile-3.webp",
   },
 ];
 ---

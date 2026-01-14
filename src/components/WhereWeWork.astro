@@ -38,7 +38,8 @@ const whereWeWork = {
         width={550}
         height={260}
         alt="Work place japan"
-        src={import.meta.env.BASE_URL + "assets/images/work-1.webp"}
+        src={import.meta.env.BASE_URL.replace(/\/$/, "") +
+          "/assets/images/work-1.webp"}
         class="w-full h-65 object-cover"
       />
       <div
@@ -68,7 +69,8 @@ const whereWeWork = {
         width={550}
         height={260}
         alt="Work place nepal"
-        src={import.meta.env.BASE_URL + "assets/images/work-2.webp"}
+        src={import.meta.env.BASE_URL.replace(/\/$/, "") +
+          "/assets/images/work-2.webp"}
         class="w-full h-65 object-cover"
       />
       <div

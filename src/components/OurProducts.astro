@@ -15,7 +15,8 @@ const products = [
       t("products.mbn_feature_2"),
       t("products.mbn_feature_3"),
     ],
-    image: import.meta.env.BASE_URL + "assets/images/mbn-1.webp",
+    image:
+      import.meta.env.BASE_URL.replace(/\/$/, "") + "/assets/images/mbn-1.webp",
   },
   {
     id: "skysales",
@@ -26,7 +27,9 @@ const products = [
       t("products.skysales_feature_2"),
       t("products.skysales_feature_3"),
     ],
-    image: import.meta.env.BASE_URL + "assets/images/skysales-1.webp",
+    image:
+      import.meta.env.BASE_URL.replace(/\/$/, "") +
+      "/assets/images/skysales-1.webp",
   },
 ];
 ---
