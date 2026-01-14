@@ -33,9 +33,18 @@ const bannerStats = [
         <h4 class="text-xl md:text-2xl font-extrabold text-primary group-hover:scale-105 transition-transform duration-300">
           {stat.value}
         </h4>
-        <p class="text-xs md:text-sm text-secondary-text font-medium uppercase tracking-wider">
-          {t(`hero.${stat.label}`)}
-        </p>
+        {stat.label === "lets_get_started" ? (
+          <a
+            href="#contact"
+            class="text-xs md:text-sm text-secondary-text font-medium uppercase tracking-wider underline"
+          >
+            {t("hero.lets_get_started")}
+          </a>
+        ) : (
+          <p class="text-xs md:text-sm text-secondary-text font-medium uppercase tracking-wider">
+            {t(`hero.${stat.label}`)}
+          </p>
+        )}
       </div>
     ))
   }
