@@ -5,9 +5,20 @@ import react from "@astrojs/react";
 
 const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
 
+const site =
+  env.PUBLIC_APP_URL ||
+  (process.env.GITHUB_REPOSITORY
+    ? `https://${process.env.GITHUB_REPOSITORY.split("/")[0]}.github.io`
+    : "https://Unibird-Nepshore-IT-Solutions.github.io");
+const base =
+  env.PUBLIC_BASE_URL ||
+  (process.env.GITHUB_REPOSITORY
+    ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}`
+    : "/website");
+
 export default defineConfig({
-  site: env.PUBLIC_APP_URL,
-  base: env.PUBLIC_BASE_URL,
+  site,
+  base,
 
   vite: {
     plugins: [tailwindcss()],
@@ -17,7 +28,7 @@ export default defineConfig({
     defaultLocale: "en",
     locales: ["en", "ja", "np"],
     routing: {
-      prefixDefaultLocale: false,
+      prefixDefaultLocale: true,
     },
   },
 

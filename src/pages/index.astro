@@ -2,5 +2,5 @@
 import { defaultLang } from "@/i18n/ui";
 
 // Redirect root to default locale
-return Astro.redirect(`/${defaultLang}/`);
+return Astro.redirect(`${import.meta.env.BASE_URL}${defaultLang}/`);
 ---
