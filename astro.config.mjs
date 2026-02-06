@@ -1,18 +1,19 @@
-import { loadEnv } from "vite";
 import { defineConfig } from "astro/config";
 import tailwindcss from "@tailwindcss/vite";
 import react from "@astrojs/react";
 
-const env = loadEnv(process.env.NODE_ENV, process.cwd(), "");
+const isGithubActions = !!process.env.GITHUB_ACTIONS;
+const repo = process.env.GITHUB_REPOSITORY?.split("/")[1];
 
 const site =
-  env.PUBLIC_APP_URL ||
-  (process.env.GITHUB_REPOSITORY
-    ? `https://${process.env.GITHUB_REPOSITORY.split("/")[0]}.github.io`
-    : "https://Unibird-Nepshore-IT-Solutions.github.io");
-const base = process.env.GITHUB_REPOSITORY
-  ? `/${process.env.GITHUB_REPOSITORY.split("/")[1]}`
-  : "/";
+  process.env.PUBLIC_APP_URL ||
+  "https://unibirdnepshore.com.np";
+
+// Only use base when NOT on custom domain
+const base =
+  site.includes("github.io") && repo
+    ? `/${repo}`
+    : "/";
 
 export default defineConfig({
   site,
