@@ -3,6 +3,9 @@
   "need_help": "Need help to start your project?",
   "request_for_a_call": "Request for a call",
   "close": "Close",
+  "thank_you_for_your_email": "Thank you for your email! We will get back to you as soon as possible.",
+  "failed_to_save_email": "Failed to save email. Please try again.",
+  "email_error_message": "Please enter a valid email address.",
   "nav": {
     "home": "Home",
     "services": "Services",
