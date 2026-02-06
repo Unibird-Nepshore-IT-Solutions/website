@@ -1,9 +1,11 @@
 import { toast } from "sonner";
 import { validateEmail } from "@/lib/utils";
 
-const form = document.querySelector("#email-us-form") as HTMLFormElement;
+const forms = document.querySelectorAll(
+  "form[data-email-form]"
+) as NodeListOf<HTMLFormElement>;
 
-if (form) {
+forms.forEach((form) => {
   const successMessage = form.getAttribute("data-success") || "";
   const emailErrorMessage = form.getAttribute("data-error-email") || "";
   const failedToSaveEmail = form.getAttribute("data-error-save") || "";
@@ -36,4 +38,4 @@ if (form) {
       toast.error(failedToSaveEmail);
     }
   });
-}
+});
