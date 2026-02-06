@@ -20,26 +20,38 @@ const t = useTranslations(lang);
     </p>
 
     <form
-      action=""
+      id="contact-form"
+      data-success={t("thank_you_for_your_phone")}
+      data-error-phone={t("phone_error_message")}
+      data-error-save={t("failed_to_save_phone")}
       class="w-full max-w-[420px] flex flex-col sm:flex-row items-center justify-center sm:h-12 mt-5 mx-auto gap-2 sm:gap-0"
     >
       <div
         class="h-full w-full flex items-center border p-2 text-text-placeholder"
       >
-        <select class="text-secondary-text border-r text-base pr-1">
-          <option value="977">+977</option>
-          <option value="81">+81</option>
+        <select
+          name="country_code"
+          class="text-secondary-text border-r text-base pr-1"
+        >
+          <option value="+977">+977</option>
+          <option value="+81">+81</option>
         </select>
         <input
           required
           type="tel"
+          name="phone"
           placeholder={t("contact.enter_your_number")}
           class="w-full h-full placeholder:text-base placeholder:text-secondary-text pl-2 focus:outline-0"
         />
       </div>
-      <Button className="rounded-none px-4 py-4 h-12 w-full sm:w-36 text-base">
+      <Button
+        type="submit"
+        className="rounded-none px-4 py-4 h-12 w-full sm:w-36 text-base"
+      >
         {t("contact.contact_us")}
       </Button>
     </form>
   </div>
 </section>
+
+<script src="@/scripts/contactUs.ts"></script>

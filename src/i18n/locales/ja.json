@@ -6,6 +6,9 @@
   "thank_you_for_your_email": "メールをありがとうございます！できるだけ早くご返信いたします。",
   "failed_to_save_email": "メールを保存できませんでした。もう一度お試しください。",
   "email_error_message": "有効なメールアドレスを入力してください。",
+  "phone_error_message": "有効な電話番号を入力してください。",
+  "thank_you_for_your_phone": "お電話番号をありがとうございます！できるだけ早くご連絡いたします。",
+  "failed_to_save_phone": "電話番号を保存できませんでした。もう一度お試しください。",
   "nav": {
     "home": "ホーム",
     "services": "サービス",

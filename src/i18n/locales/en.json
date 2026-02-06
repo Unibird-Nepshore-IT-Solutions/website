@@ -6,6 +6,9 @@
   "thank_you_for_your_email": "Thank you for your email! We will get back to you as soon as possible.",
   "failed_to_save_email": "Failed to save email. Please try again.",
   "email_error_message": "Please enter a valid email address.",
+  "phone_error_message": "Please enter a valid phone number.",
+  "thank_you_for_your_phone": "Thank you for your phone number! We will get back to you as soon as possible.",
+  "failed_to_save_phone": "Failed to save phone number. Please try again.",
   "nav": {
     "home": "Home",
     "services": "Services",
