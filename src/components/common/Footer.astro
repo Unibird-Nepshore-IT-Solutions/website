@@ -1,24 +1,25 @@
 ---
 import { getLangFromUrl, useTranslations } from "@/i18n/utils";
 import { Button } from "@components/ui/button";
+import { whereWeWork } from "../WhereWeWork.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const whereWeWork = {
-  jpn: {
-    address:
-      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
-    phone: "+81-6824-5043",
-    mail: "ub.office@uni-bird.com",
-  },
-  nep: {
-    address:
-      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
-    phone: "+81-6824-5043",
-    mail: "ub.office@uni-bird.com",
-  },
-};
+// const whereWeWork = {
+//   jpn: {
+//     address:
+//       " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+//     phone: "+81-6824-5043",
+//     mail: "ub.office@uni-bird.com",
+//   },
+//   nep: {
+//     address:
+//       " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+//     phone: "+81-6824-5043",
+//     mail: "ub.office@uni-bird.com",
+//   },
+// };
 ---
 
 <footer
@@ -61,16 +62,20 @@ const whereWeWork = {
       <p class="text-primary-foreground text-sm md:text-base">
         {t("footer.footer_desc")}
       </p>
-      <p class="text-primary-foreground text-sm md:text-base">
+      <!-- <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("work.call_us_now")}: `}</span>
         <span>{whereWeWork.jpn.phone}</span>
-      </p>
+      </p> -->
       <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("work.mail_us")}: `}</span>
-        <span>{whereWeWork.jpn.mail}</span>
+        <span>{whereWeWork.nep.mail}</span>
       </p>
       <p class="text-primary-foreground text-sm md:text-base">
         <span class="font-bold">{`${t("footer.location")}: `}</span>
+        <span>{whereWeWork.nep.address}</span>
+      </p>
+      <p class="text-primary-foreground text-sm md:text-base">
+        <span class="font-bold">{`${t("footer.head_office")}: `}</span>
         <span>{whereWeWork.jpn.address}</span>
       </p>
     </div>
