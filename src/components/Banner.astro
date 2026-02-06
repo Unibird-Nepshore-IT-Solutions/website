@@ -3,7 +3,7 @@ import { getAssetPath, getLangFromUrl, useTranslations } from "@/i18n/utils";
 
 import Image from "astro/components/Image.astro";
 import BannerStats from "./BannerStats.astro";
-import { EmailUs } from "./common/EmailUs";
+import EmailUs from "./common/EmailUs.astro";
 
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
@@ -44,7 +44,6 @@ const t = useTranslations(lang);
       </p>
 
       <EmailUs
-        client:only="react"
         buttonLabel={t("hero.email_us")}
         emailErrorMessage={t("email_error_message")}
         failedToSaveEmail={t("failed_to_save_email")}
