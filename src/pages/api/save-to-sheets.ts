@@ -4,18 +4,23 @@ import { google } from "googleapis";
 
 const SHEET_ID = import.meta.env.PUBLIC_GOOGLE_SHEET_ID;
 const CLIENT_EMAIL = import.meta.env.GOOGLE_SERVICE_ACCOUNT_CLIENT_EMAIL;
-const PRIVATE_KEY = import.meta.env.GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY;
+
+// Decode Base64 private key
+const PRIVATE_KEY_BASE64 = import.meta.env
+  .GOOGLE_SERVICE_ACCOUNT_PRIVATE_KEY_BASE64;
+const PRIVATE_KEY = PRIVATE_KEY_BASE64
+  ? Buffer.from(PRIVATE_KEY_BASE64, "base64").toString("utf-8")
+  : "";
 
 export const prerender = false;
 
 export const POST: APIRoute = async ({ request }) => {
-  console.log("API route reached");
-
   try {
+    // ✅ Read body ONCE
     const body = await request.json();
     const { text, type, countryCode } = body;
 
-    console.log("Received data:", { text, type, countryCode });
+    console.log("Received data:", body); // ✅ Log after reading
 
     if (!text || !type) {
       return new Response(
@@ -24,7 +29,7 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    // Initialize Google Sheets API with Service Account
+    // Initialize Google Sheets API
     const auth = new google.auth.GoogleAuth({
       credentials: {
         client_email: CLIENT_EMAIL,
@@ -35,35 +40,23 @@ export const POST: APIRoute = async ({ request }) => {
 
     const sheets = google.sheets({ version: "v4", auth });
 
-    // Prepare data
     const timestamp = new Date().toISOString();
     const values = [[timestamp, type, text, countryCode || ""]];
 
-    // Append to Google Sheets
     const response = await sheets.spreadsheets.values.append({
       spreadsheetId: SHEET_ID,
       range: "Sheet1!A:D",
       valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: values,
-      },
+      requestBody: { values },
     });
-
-    console.log("Google Sheets response:", response.data);
 
     return new Response(JSON.stringify({ message: "Saved successfully" }), {
       status: 200,
     });
   } catch (error: any) {
-    console.error("API Error:", error);
-    console.error("Error details:", error.message);
-
-    return new Response(
-      JSON.stringify({
-        error: error.message || "Internal server error",
-        details: error.response?.data || null,
-      }),
-      { status: 500 },
-    );
+    console.error("API Error:", error.message);
+    return new Response(JSON.stringify({ error: error.message }), {
+      status: 500,
+    });
   }
 };
