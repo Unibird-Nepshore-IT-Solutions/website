@@ -5,7 +5,7 @@ import { getAssetPath, getLangFromUrl, useTranslations } from "@/i18n/utils";
 const lang = getLangFromUrl(Astro.url);
 const t = useTranslations(lang);
 
-const whereWeWork = {
+export const whereWeWork = {
   jpn: {
     address:
       " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
@@ -13,10 +13,9 @@ const whereWeWork = {
     mail: "ub.office@uni-bird.com",
   },
   nep: {
-    address:
-      " 8th floor, Shinagawa Grand Central Tower, 2-16-4 Konan, Minato-ku, Tokyo",
+    address: " Bharatpur–1, Lions Chowk, Narayangarh, Chitwan, Nepal",
     phone: "+81-6824-5043",
-    mail: "ub.office@uni-bird.com",
+    mail: "contact@unibirdnepshore.com.np",
   },
 };
 ---
@@ -50,11 +49,11 @@ const whereWeWork = {
         <h5 class="font-bold text-xl text-secondary-foreground">
           {whereWeWork.jpn.address}
         </h5>
-        <p class="font-bold text-secondary-foreground">
+        <!-- <p class="font-bold text-secondary-foreground">
           {`${t("work.call_us_now")}: `}<span class="font-normal"
             >{whereWeWork.jpn.phone}</span
           >
-        </p>
+        </p> -->
         <p class="font-bold text-secondary-foreground">
           {`${t("work.mail_us")}: `}<span class="font-normal"
             >{whereWeWork.jpn.mail}</span
@@ -80,11 +79,11 @@ const whereWeWork = {
         <h5 class="font-bold text-xl text-secondary-foreground">
           {whereWeWork.nep.address}
         </h5>
-        <p class="font-bold text-secondary-foreground">
+        <!-- <p class="font-bold text-secondary-foreground">
           {`${t("work.call_us_now")}: `}<span class="font-normal"
             >{whereWeWork.nep.phone}</span
           >
-        </p>
+        </p> -->
         <p class="font-bold text-secondary-foreground">
           {`${t("work.mail_us")}: `}<span class="font-normal"
             >{whereWeWork.nep.mail}</span

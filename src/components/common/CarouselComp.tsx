@@ -75,8 +75,9 @@ export const CarouselComp = ({
                       width={48}
                       height={48}
                       alt="Quote"
-                      className="text-sm"
+                      loading="lazy"
                       src={quotePath}
+                      className="text-sm"
                     />
                   </div>
                   <p className="text-secondary-text text-center leading-relaxed">
@@ -86,6 +87,7 @@ export const CarouselComp = ({
                     <img
                       width={48}
                       height={48}
+                      loading="lazy"
                       alt={slide.clientName}
                       src={slide.clientProfile}
                       className="text-sm mx-auto rounded-full size-12"

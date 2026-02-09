@@ -3,6 +3,12 @@
   "need_help": "プロジェクトの開始にお困りですか？",
   "request_for_a_call": "お電話のご依頼",
   "close": "閉じる",
+  "thank_you_for_your_email": "メールをありがとうございます！できるだけ早くご返信いたします。",
+  "failed_to_save_email": "メールを保存できませんでした。もう一度お試しください。",
+  "email_error_message": "有効なメールアドレスを入力してください。",
+  "phone_error_message": "有効な電話番号を入力してください。",
+  "thank_you_for_your_phone": "お電話番号をありがとうございます！できるだけ早くご連絡いたします。",
+  "failed_to_save_phone": "電話番号を保存できませんでした。もう一度お試しください。",
   "nav": {
     "home": "ホーム",
     "services": "サービス",
@@ -103,6 +109,7 @@
     "quick_links": "クイックリンク",
     "services": "サービス",
     "technology_used": "使用技術",
-    "copyright": "著作権"
+    "copyright": "著作権",
+    "head_office": "本社"
   }
 }
