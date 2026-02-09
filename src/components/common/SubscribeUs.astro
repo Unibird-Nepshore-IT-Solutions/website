@@ -18,10 +18,11 @@ const {
 
 <form
   data-email-form
-  class="w-full max-w-[472px] flex items-center gap-1 h-12 border border-background"
+  data-form-type="newsletter"
   data-success={successMessage}
   data-error-email={emailErrorMessage}
   data-error-save={failedToSaveEmail}
+  class="w-full max-w-[472px] flex items-center gap-1 h-12 border border-background"
 >
   <div class="h-full min-w-4 w-full">
     <input

@@ -18,10 +18,11 @@ const {
 
 <form
   data-email-form
-  class="w-full flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 animate-fade-in delay-200"
+  data-form-type="email-us"
   data-success={successMessage}
   data-error-email={emailErrorMessage}
   data-error-save={failedToSaveEmail}
+  class="w-full flex flex-col sm:flex-row items-center justify-center md:justify-start gap-3 animate-fade-in delay-200"
 >
   <div class="h-14 w-full group">
     <input

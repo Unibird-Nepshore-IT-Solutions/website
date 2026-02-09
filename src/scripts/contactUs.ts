@@ -1,3 +1,4 @@
+// src/scripts/contactUs.ts
 import { toast } from "sonner";
 import { validatePhone } from "@/lib/utils";
 
@@ -20,17 +21,22 @@ form.addEventListener("submit", async (e) => {
   }
 
   try {
-    const response = await fetch("/api/save-email-to-csv", {
+    const response = await fetch("/api/save-to-sheets", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ text: `${countryCode}${phone}` }),
+      body: JSON.stringify({
+        text: phone,
+        type: "contact",
+        countryCode: countryCode,
+      }),
     });
 
     if (response.ok) {
       toast.success(successMessage);
       form.reset();
     } else {
-      toast.error(failedToSavePhone);
+      const data = await response.json();
+      toast.error(data.error || failedToSavePhone);
     }
   } catch (error) {
     toast.error(failedToSavePhone);
