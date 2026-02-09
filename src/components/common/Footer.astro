@@ -21,6 +21,7 @@ const t = useTranslations(lang);
       {t("footer.subscribe_to_our_newsletter")}
     </h1>
     <SubscribeUs
+      loadingMessage={t("submitting")}
       buttonLabel={t("footer.subscribe_us")}
       emailErrorMessage={t("email_error_message")}
       failedToSaveEmail={t("failed_to_save_email")}

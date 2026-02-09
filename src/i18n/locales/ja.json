@@ -9,6 +9,8 @@
   "phone_error_message": "有効な電話番号を入力してください。",
   "thank_you_for_your_phone": "お電話番号をありがとうございます！できるだけ早くご連絡いたします。",
   "failed_to_save_phone": "電話番号を保存できませんでした。もう一度お試しください。",
+  "submitting": "送信中...",
+  "sending": "送信中...",
   "nav": {
     "home": "ホーム",
     "services": "サービス",

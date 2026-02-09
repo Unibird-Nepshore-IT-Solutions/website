@@ -21,9 +21,10 @@ const t = useTranslations(lang);
 
     <form
       id="contact-form"
-      data-success={t("thank_you_for_your_phone")}
+      data-loading={t("sending")}
       data-error-phone={t("phone_error_message")}
       data-error-save={t("failed_to_save_phone")}
+      data-success={t("thank_you_for_your_phone")}
       class="w-full max-w-[420px] flex flex-col sm:flex-row items-center justify-center sm:h-12 mt-5 mx-auto gap-2 sm:gap-0"
     >
       <div

@@ -44,6 +44,7 @@ const t = useTranslations(lang);
       </p>
 
       <EmailUs
+        loadingMessage={t("submitting")}
         buttonLabel={t("hero.email_us")}
         emailErrorMessage={t("email_error_message")}
         failedToSaveEmail={t("failed_to_save_email")}

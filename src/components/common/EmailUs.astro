@@ -2,6 +2,7 @@
 interface Props {
   placeholder: string;
   buttonLabel: string;
+  loadingMessage: string;
   successMessage: string;
   emailErrorMessage: string;
   failedToSaveEmail: string;
@@ -11,6 +12,7 @@ const {
   placeholder,
   buttonLabel,
   successMessage,
+  loadingMessage,
   emailErrorMessage,
   failedToSaveEmail,
 } = Astro.props;
@@ -19,6 +21,7 @@ const {
 <form
   data-email-form
   data-form-type="email-us"
+  data-loading={loadingMessage}
   data-success={successMessage}
   data-error-email={emailErrorMessage}
   data-error-save={failedToSaveEmail}

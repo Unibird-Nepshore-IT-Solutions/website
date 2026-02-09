@@ -8,9 +8,15 @@ const forms = document.querySelectorAll(
 
 forms.forEach((form) => {
   const successMessage = form.getAttribute("data-success") || "";
-  const emailErrorMessage = form.getAttribute("data-error-email") || "";
   const failedToSaveEmail = form.getAttribute("data-error-save") || "";
-  const formType = form.getAttribute("data-form-type") || "newsletter"; // 'newsletter', 'email-us'
+  const formType = form.getAttribute("data-form-type") || "newsletter";
+  const emailErrorMessage = form.getAttribute("data-error-email") || "";
+
+  const loadingText = form.getAttribute("data-loading") || "Submitting...";
+
+  const submitButton = form.querySelector(
+    'button[type="submit"]',
+  ) as HTMLButtonElement;
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -22,6 +28,10 @@ forms.forEach((form) => {
       toast.error(emailErrorMessage);
       return;
     }
+
+    const originalButtonText = submitButton.innerHTML;
+    submitButton.disabled = true;
+    submitButton.innerHTML = loadingText;
 
     try {
       const response = await fetch("/api/save-to-sheets", {
@@ -41,7 +51,12 @@ forms.forEach((form) => {
         toast.error(data.error || failedToSaveEmail);
       }
     } catch (error) {
+      // Reset button state on error
       toast.error(failedToSaveEmail);
+    } finally {
+      // Reset button state
+      submitButton.disabled = false;
+      submitButton.innerHTML = originalButtonText;
     }
   });
 });

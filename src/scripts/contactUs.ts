@@ -7,6 +7,11 @@ const form = document.querySelector("#contact-form") as HTMLFormElement;
 const successMessage = form.getAttribute("data-success") || "";
 const phoneErrorMessage = form.getAttribute("data-error-phone") || "";
 const failedToSavePhone = form.getAttribute("data-error-save") || "";
+const loadingText = form.getAttribute("data-loading") || "Sending...";
+
+const submitButton = form.querySelector(
+  'button[type="submit"]',
+) as HTMLButtonElement;
 
 form.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -19,6 +24,11 @@ form.addEventListener("submit", async (e) => {
     toast.error(phoneErrorMessage);
     return;
   }
+
+  // Show loading state with translated text
+  const originalButtonText = submitButton.innerHTML;
+  submitButton.disabled = true;
+  submitButton.innerHTML = loadingText;
 
   try {
     const response = await fetch("/api/save-to-sheets", {
@@ -39,6 +49,11 @@ form.addEventListener("submit", async (e) => {
       toast.error(data.error || failedToSavePhone);
     }
   } catch (error) {
+    // Reset button state on error
     toast.error(failedToSavePhone);
+  } finally {
+    // Reset button state
+    submitButton.disabled = false;
+    submitButton.innerHTML = originalButtonText;
   }
 });
