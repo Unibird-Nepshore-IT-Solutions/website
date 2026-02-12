@@ -31,55 +31,59 @@ const products = [
 ];
 ---
 
-<section
-  id="our-products"
-  class="py-12 md:py-24 px-6 md:px-12 lg:pl-28 lg:pr-12"
->
-  <h2 class="text-base text-secondary text-center">
-    {t("products.our_products")}
-  </h2>
-  <h3 class="text-2xl md:text-4xl lg:text-[40px] font-bold text-center">
-    {t("products.empowering_your_digital_future")}
-  </h3>
+<section id="our-products" class="py-12 md:py-24">
+  <div class="px-6 md:px-12 lg:pl-28 lg:pr-12">
+    <h2 class="text-base text-secondary text-center">
+      {t("products.our_products")}
+    </h2>
+    <h3 class="text-2xl md:text-4xl lg:text-[40px] font-bold text-center">
+      {t("products.empowering_your_digital_future")}
+    </h3>
+  </div>
 
-  <div class="grid grid-cols-1 mt-10">
+  <div class="flex flex-col gap-0 mt-10 relative">
     {
       products.map((product, index) => (
-        <div class={`fade-slide slide-${index + 1} [grid-area:1/1]`}>
-          <div class="flex flex-col-reverse lg:flex-row gap-16 items-center pb-8">
-            {/* Left Section */}
-            <div class="w-full lg:w-3/5 flex flex-col gap-4 text-center lg:text-left py-4">
-              <h4 class="font-bold text-3xl md:text-[40px] leading-tight text-primary">
+        <div
+          class="product-slide sticky top-0 min-h-dvh flex items-center bg-white border-t border-gray-100"
+          style={`z-index: ${index + 1};`}
+        >
+          <div
+            class={`px-6 md:px-12 lg:pl-28 lg:pr-12 pt-12 ${index === 0 ? "pb-32" : "pb-12"} lg:py-0 flex flex-col-reverse lg:flex-row gap-8 lg:gap-16 items-center w-full lg:overflow-visible`}
+          >
+            {/* Left Section (Content) */}
+            <div class="w-full lg:w-3/5 flex flex-col gap-3 lg:gap-4 text-center lg:text-left">
+              <h4 class="font-bold text-2xl md:text-3xl lg:text-4xl xl:text-[40px] leading-tight text-primary">
                 {product.title}
               </h4>
-              <p class="text-sm md:text-base leading-relaxed text-secondary-text">
+              <p class="text-xs md:text-sm lg:text-base leading-relaxed text-secondary-text">
                 {product.description}
               </p>
-              <h5 class="font-bold text-lg md:text-xl mt-4">
+              <h5 class="font-bold text-base md:text-lg lg:text-xl mt-2 lg:mt-4">
                 {t("products.key_features")}
               </h5>
-              <ul class="list-disc flex flex-col gap-2 text-left px-4 md:px-6 lg:px-4">
+              <ul class="list-disc flex flex-col gap-1 lg:gap-2 text-left px-5 md:px-6 lg:px-4">
                 {product.features.map((feature) => (
-                  <li class="text-sm md:text-base text-secondary-text">
+                  <li class="text-[10px] sm:text-xs md:text-sm lg:text-base text-secondary-text">
                     {feature}
                   </li>
                 ))}
               </ul>
             </div>
 
-            {/* Right Section */}
-            <div class="w-full lg:w-2/5 flex items-center justify-center pt-8 lg:pt-0">
-              <div class="relative w-full max-w-[260px] sm:max-w-[400px] aspect-square flex items-center justify-center group">
+            {/* Right Section (Image) */}
+            <div class="w-full lg:w-2/5 flex items-center justify-center">
+              <div class="relative w-full max-w-[180px] sm:max-w-[240px] lg:max-w-[400px] aspect-square flex items-center justify-center group">
                 {/* Background Full Circle */}
-                <div class="absolute inset-4 rounded-full bg-accent/60 transition-all duration-500 group-hover:bg-accent group-hover:scale-101 shadow-inner" />
+                <div class="absolute inset-2 rounded-full bg-accent/60 transition-all duration-500 group-hover:bg-accent group-hover:scale-105 shadow-inner" />
 
-                <div class="relative w-full h-full transform transition-all duration-500 group-hover:translate-y-[-10px] group-hover:scale-101 flex items-center justify-center">
+                <div class="relative w-full h-full transform transition-all duration-500 group-hover:-translate-y-2 group-hover:scale-105 flex items-center justify-center">
                   <Image
                     width={500}
                     height={500}
                     alt={product.title}
                     src={product.image}
-                    class="w-full h-full object-contain scale-105 md:scale-110 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)]"
+                    class="w-full h-full object-contain scale-110 md:scale-125 drop-shadow-[0_20px_40px_rgba(0,0,0,0.15)] group-hover:drop-shadow-[0_30px_60px_rgba(0,0,0,0.25)]"
                   />
                 </div>
               </div>
@@ -92,36 +96,11 @@ const products = [
 </section>
 
 <style>
-  .fade-slide {
-    width: 100%;
-    opacity: 0;
-    animation: fadeSlide 8s infinite ease-in-out;
-    pointer-events: none;
+  .product-slide {
+    will-change: transform;
   }
 
-  .fade-slide.slide-1 {
-    animation-delay: 0s;
-  }
-
-  .fade-slide.slide-2 {
-    animation-delay: 4s;
-  }
-
-  /* Only allow pointer events for the semi-visible slide to avoid clicking hidden links (if any) */
-  @keyframes fadeSlide {
-    0%,
-    45% {
-      opacity: 1;
-      pointer-events: auto;
-    }
-    50%,
-    95% {
-      opacity: 0;
-      pointer-events: none;
-    }
-    100% {
-      opacity: 1;
-      pointer-events: auto;
-    }
+  #our-products {
+    padding-bottom: 0;
   }
 </style>
